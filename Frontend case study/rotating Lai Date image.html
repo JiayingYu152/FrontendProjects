@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotating Image</title>
+    <style>
+      .image-container {
+        width: 500px;
+        height: 500px;
+        position: relative;
+        perspective: 1000px;
+      }
+
+      .rotating-image {
+        width: 250px;
+        height: 250px;
+        margin: 10px;
+        transition: box-shadow 0.1s;
+      }
+
+      .rotating-image img {
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        transition: transform 0.1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="image-container" class="image-container">
+      <div class="rotating-image">
+        <img
+          id="rotating-img"
+          src="../Amazon Page/data/LaiDate-bgR.png"
+          alt="Rotating Image"
+        />
+      </div>
+    </div>
+    <script>
+      const imageContainer = document.getElementById("image-container");
+      const rotatingImage = document.getElementById("rotating-img");
+
+      imageContainer.addEventListener("mousemove", (e) => {
+        const rect = imageContainer.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        const rotateX = (y / rect.height) * 80;
+        const rotateY = (-x / rect.width) * 80;
+
+        rotatingImage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        const rotatingImageContainer = rotatingImg.parentElement;
+        rotatingImageContainer.style.boxShadow = `${rotateY / 4}px ${
+          rotateX / 4
+        }px 20px rgba(0, 0, 0, 0.5)`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+.contact-form-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: auto;
+}
+.contact-form-container {
+  width: 400px;
+  height: 600px;
+  background-color: azure;
+  border: 1px solid black;
+  padding: 30px;
+  box-shadow: 0 4px 8px #aaaaaa;
+}
+
+.input-area {
+  width: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.label {
+  width: 80px;
+  display: inline-block;
+  /* 有display：inline-block这一行才能设置宽度，否则这个css 选择器的优先级不够高，label样式会被覆盖掉 */
+  margin-right: 10px;
+}
