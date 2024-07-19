@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation based on CSS & JavaScript</title>
+    <style>
+      body {
+        margin: 30px auto;
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        color: #777777;
+        background: #ece9e6; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          90deg,
+          #fef3cf 0%,
+          #ffffff 60%,
+          #d8e4d8 100%
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          90deg,
+          #fef3cf 0%,
+          #ffffff 60%,
+          #d8e4d8 100%
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .animation-single-content {
+        border: 1px solid #777777;
+        width: 90%;
+        border-radius: 12px;
+        padding: 20px 50px;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+      }
+
+      code {
+        background: #dddddd;
+        color: #000;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+
+      .italic-li {
+        font-style: italic;
+      }
+    </style>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  </head>
+  <body>
+    <h1>Animation based on CSS</h1>
+
+    <div class="animation-single-content">
+      <h2>Jumping Heart</h2>
+      <ul>
+        <li>
+          Using <code>animation: piece-1 3s infinite;</code> to define the
+          animation-name, animation-duration, animation-effect, respectively.
+        </li>
+        <li>
+          Using <code>:nth-child(#)</code> to define which piece is selected.
+        </li>
+        <li>
+          Using <code>@keyframes</code> to define the animation effect, NAME
+          your animation.
+        </li>
+        <li class="italic-li">
+          UI TIPS: using <code>border-radius: #</code> makes your interface more
+          friendly and soft.
+        </li>
+      </ul>
+      <p
+        data-height="500"
+        data-theme-id="dark"
+        data-slug-hash="xxoVRoY"
+        data-default-tab="result,html"
+        data-user="JiayingYu152"
+        data-embed-version="1"
+        data-pen-title="Jumping Heart"
+        class="codepen"
+      >
+        See the Pen
+        <a href="https://codepen.io/JiayingYu152/pen/xxoVRoY"> Jumping Heart</a>
+        by Jiaying Yu (<a href="https://codepen.io/JiayingYu152"
+          >@JiayingYu152</a
+        >) on <a href="https://codepen.io">CodePen</a>.
+      </p>
+    </div>
+
+    <div class="animation-single-content">
+      <h2>Vertical Bounce</h2>
+      <ul>
+        <li>
+          Using
+          <code>background: linear-gradient(150deg, #d299c2, #f2f9d7)</code> to
+          create a linear gradient background. REMEMBER: it is
+          <code>background</code> instead of <code>background-color</code>. In
+          this case, I use this field for both the bubble and the whole page
+          background.
+        </li>
+        <li>
+          Using <code>@keyframes</code> to define the animation effect, NAME
+          your animation.
+        </li>
+        <li>
+          Using <code>animation: ANIMATION-NAME #s infinite;</code> to define
+          the animation-name, animation-duration, animation-effect,
+          respectively.
+        </li>
+        <li>
+          Using <code>filter: blur(1px)</code> to add a blur effect, making your
+          item more soft. The greater the value, the more blur the item will be.
+        </li>
+      </ul>
+      <p
+        data-height="500"
+        data-theme-id="dark"
+        data-slug-hash="BagKpPz?editors=1100"
+        data-default-tab="result,html"
+        data-user="JiayingYu152"
+        data-embed-version="1"
+        data-pen-title="Vertical Bounce"
+        class="codepen"
+      >
+        See the Pen
+        <a href="https://codepen.io/JiayingYu152/pen/BagKpPz?editors=1100">
+          Vertical Bounce</a
+        >
+        by Jiaying Yu (<a href="https://codepen.io/JiayingYu152"
+          >@JiayingYu152</a
+        >) on <a href="https://codepen.io">CodePen</a>.
+      </p>
+    </div>
+
+    <div class="animation-single-content">
+      <h2>Authentic Drip</h2>
+      <ul>
+        <li class="italic-li">
+          IMPORTANT: Using
+          <a href="https://10015.io/tools/css-border-radius-generator"
+            >CSS Border Radius Generator</a
+          >
+          to draw the border-radius for the animation.
+        </li>
+        <li>
+          Check out <code>#water {box-shadow: XXX}</code> to see how I draw the
+          water drip to make it look like a 3D effect.
+        </li>
+        <li>
+          Using <code>@keyframes</code> to change various
+          <code>border-radius</code> to make the water drip move.
+        </li>
+      </ul>
+      <p
+        data-height="500"
+        data-theme-id="dark"
+        data-slug-hash="XWLdMry?editors=1100"
+        data-default-tab="result,html"
+        data-user="JiayingYu152"
+        data-embed-version="1"
+        data-pen-title="Authentic Drip"
+        class="codepen"
+      >
+        See the Pen
+        <a href="https://codepen.io/JiayingYu152/pen/XWLdMry?editors=1100">
+          Authentic Drip</a
+        >
+        by Jiaying Yu (<a href="https://codepen.io/JiayingYu152"
+          >@JiayingYu152</a
+        >) on <a href="https://codepen.io">CodePen</a>.
+      </p>
+    </div>
+
+    <div class="animation-single-content">
+      <h2>Raising Background</h2>
+      <ul>
+        <li>
+          Using <code>:nth-child(#)</code> to define which child is selected.
+        </li>
+        <li>
+          Using <code>@keyframes</code> to define the animation effect, NAME
+          your animation.
+        </li>
+        <li class="italic-li">
+          CODING TIPS: in VSCode(that I usually use), type
+          <code>li*21</code> then ENTER, you will create 21 "li" immediately.
+          Same as this tip, if you want to create multiple FIELD with the same
+          className, you can type <code>item#className*repeatTime</code>,
+          like(<code>li#myLi*2</code>). Try it on, and you will be surprised!
+        </li>
+      </ul>
+      <p
+        data-height="500"
+        data-theme-id="dark"
+        data-slug-hash="OJeNpyp"
+        data-default-tab="result,html"
+        data-user="JiayingYu152"
+        data-embed-version="1"
+        data-pen-title="Raising Background"
+        class="codepen"
+      >
+        See the Pen
+        <a href="https://codepen.io/JiayingYu152/pen/OJeNpyp">
+          Raising Background</a
+        >
+        by Jiaying Yu (<a href="https://codepen.io/JiayingYu152"
+          >@JiayingYu152</a
+        >) on <a href="https://codepen.io">CodePen</a>.
+      </p>
+    </div>
+  </body>
+</html>
