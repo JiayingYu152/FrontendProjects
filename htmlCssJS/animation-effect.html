@@ -186,6 +186,97 @@
         >) on <a href="https://codepen.io">CodePen</a>.
       </p>
     </div>
+
+    <div class="animation-single-content">
+      <h2>Hover Transforming Hello World</h2>
+      <ul>
+        <li>
+          Using <code>:nth-child(#)</code> to define which child is selected.
+        </li>
+        <li>
+          The <code>:before</code> and <code>::before</code> pseudo-elements are
+          used to insert content before the contents inside each.box element,
+          and to show changes with different animation effects when the mouse is
+          hovering.
+        </li>
+        <li>
+          <code>translateY(100%)</code> is a CSS transform property used to move
+          elements in a vertical direction. Specifically, this property moves
+          the element 100% of its own height along the Y-axis
+        </li>
+      </ul>
+      <p
+        data-height="500"
+        data-theme-id="dark"
+        data-slug-hash="bGPeRJw"
+        data-default-tab="result,html"
+        data-user="JiayingYu152"
+        data-embed-version="1"
+        data-pen-title="Hover Transforming Hello World"
+        class="codepen"
+      >
+        See the Pen
+        <a href="https://codepen.io/JiayingYu152/pen/bGPeRJw">
+          Hover Transforming Hello World</a
+        >
+        by Jiaying Yu (<a href="https://codepen.io/JiayingYu152"
+          >@JiayingYu152</a
+        >) on <a href="https://codepen.io">CodePen</a>.
+      </p>
+    </div>
+
+    <div class="animation-single-content">
+      <h2>CSS Scroll-Driven Animation</h2>
+      <ul>
+        <li>
+          Instead of using JavaScript timers (<code>setTimeout</code> and
+          <code>setInterval</code>), we are going to use CSS Scroll-Driven
+          Animation in this case. There are various use cases for this, for
+          example, ads display window and "go back to top" button, and so on.
+          When you are scrolling, this component will hide itself; while you
+          quit scrolling, it will appear. The case not only detects the scroll
+          event, but it also can detect the scroll speed and direction.
+        </li>
+        <li>
+          REMEMBER: there are many useless code which its absence would not
+          affect the funciton of this code. I am writing it out for checking the
+          scroll event. I used <code>--scroll-velocity</code> to see the time
+          gap (which is also the difference between
+          <code>--scroll-position</code> and
+          <code>--scroll-position-delay</code>), to represent the scroll status.
+          0 represents the QUIT status, not moving at all. Positive figure
+          represents scrolling down. Negative figure represents scrolling up.
+        </li>
+        <li>
+          WHY <code>--scroll-velocity</code> is important? We are using it to
+          represents the scroll event status, and according to various status,
+          we would define various CSS for them. In this case, when we are
+          scrolling, the <code>component</code> would hide itself. While we quit
+          scrolling, the <code>component</code> will appear. Therefore, we need
+          only two status, SCROLLING and QUIT, which are ANY FIGURE and ZERO,
+          respectively.
+        </li>
+      </ul>
+      <p
+        data-height="500"
+        data-theme-id="dark"
+        data-slug-hash="vYqKJXO?editors=1100"
+        data-default-tab="result,html"
+        data-user="JiayingYu152"
+        data-embed-version="1"
+        data-pen-title="CSS Scroll-Driven Animation"
+        class="codepen"
+      >
+        See the Pen
+        <a href="https://codepen.io/JiayingYu152/pen/vYqKJXO?editors=1100">
+          CSS Scroll-Driven Animation</a
+        >
+        by Jiaying Yu (<a href="https://codepen.io/JiayingYu152"
+          >@JiayingYu152</a
+        >) on <a href="https://codepen.io">CodePen</a>.
+      </p>
+    </div>
+
     <script>
       const goHomeIcon = document.getElementById(
         "animation-effect-go-home-icon"
