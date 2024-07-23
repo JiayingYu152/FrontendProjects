@@ -26,7 +26,7 @@ body {
   position: relative;
 }
 
-.animation-effect-go-home-side-icon-container {
+.css-animation-effect-go-home-side-icon-container {
   display: flex;
   flex-direction: row;
   position: fixed;
@@ -36,7 +36,7 @@ body {
   cursor: pointer;
 }
 
-.animation-effect-return-once-side-icon-container {
+.css-animation-effect-return-once-side-icon-container {
   display: flex;
   flex-direction: row;
   position: fixed;
@@ -46,15 +46,15 @@ body {
   cursor: pointer;
 }
 
-.animation-effect-go-home-icon,
-.animation-effect-return-once-icon {
+.css-animation-effect-go-home-icon,
+.css-animation-effect-return-once-icon {
   width: 25px;
   height: 25px;
   margin-right: 10px;
 }
 
-#animation-effect-go-home-icon-text,
-#animation-effect-return-once-icon-text {
+#css-animation-effect-go-home-icon-text,
+#css-animation-effect-return-once-icon-text {
   display: none;
   padding: 5px;
   white-space: nowrap;
