@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentic Drip</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: #00a8ff;
+      }
+      #water {
+        position: relative;
+        margin-top: 200px;
+        width: 300px;
+        height: 300px;
+        /* border: 1px solid #000;  for initial outline, not necessary for final effect*/
+        border-radius: 59% 41% 63% 37% / 22% 26% 74% 78%;
+        /* Using https://10015.io/tools/css-border-radius-generator for border-radius */
+        box-shadow: inset 10px 20px 30px rgba(0, 0, 0, 0.5),
+          /* inset for outline. for INNER SHADOW: 10px for vertical shadow, 20px for horizontal shadow,  30px for blur radius effect*/
+            10px 10px 20px rgba(0, 0, 0, 0.3)
+            /* for OUTER SHADOW: 10px for vertical shadow, 10px for horizontal shadow,  20px for blur radius effect*/,
+          15px 15px 30px rgba(0, 0, 0, 0.05)
+            /* for OUTER SHADOW as well, make effect stronger and like 3d effect*/,
+          inset -10px -10px 15px rgba(255, 255, 255, 0.8)
+            /* for INNER SHADOW, white, make effect like 3d effect*/;
+        animation: waterAction 3s linear infinite;
+      }
+      #water::after {
+        /*the first white highlight*/
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute; /* position related to BODY */
+        top: 80px;
+        left: 68%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50% 50% 63% 37% / 54% 63% 37% 46%;
+        animation: shadowAction 3s linear infinite;
+      }
+      #water::before {
+        /*the second white highlight, its size should smaller than previous highlight*/
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute; /* position related to WATER */
+        top: 100px;
+        left: 78%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 42% 58% 63% 37% / 63% 71% 29% 37%;
+        animation: shadowAction 3.5s linear infinite;
+      }
+      @keyframes waterAction {
+        25% {
+          border-radius: 30% 70% 44% 56% / 42% 26% 74% 58%;
+        }
+        50% {
+          border-radius: 30% 70% 21% 79% / 57% 26% 74% 43%;
+        }
+        0%,
+        100% {
+          border-radius: 30% 70% 51% 49% / 33% 40% 60% 67%;
+        }
+      }
+      @keyframes shadowAction {
+        25%,
+        75% {
+          border-radius: 64% 32% 67% 31% / 48% 67% 27% 52%;
+        }
+        50% {
+          border-radius: 77% 23% 26% 55% / 55% 53% 37% 42%;
+        }
+        0%,
+        100% {
+          border-radius: 85% 9% 19% 79% / 63% 38% 52% 35%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="water"></div>
+  </body>
+</html>

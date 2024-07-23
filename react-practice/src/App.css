@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home-page-header {
+  text-align: center;
+}
+
+.home-page-ul-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* 
+  上面 可以用gap，但是必须要建立在有display:flex  基础上才可以用gap: 单独用gap不会work。
+  下面这个css 也是 equivalent的， 二选一
+  
+.home-page-ul-container li {
+  margin-bottom: 10px;
+} */
+
+.li-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.important-paragraph {
+  margin-left: 30px;
+  line-height: 1.3;
+}

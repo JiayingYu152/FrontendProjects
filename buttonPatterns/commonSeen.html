@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Common Seen Hover Effect</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: 100vh;
+        background-color: #f8f8f8;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 20px 50px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .larger-font:hover {
+        font-size: 1.5rem;
+        transition: 0.2s ease-in;
+      }
+
+      .darker-background:hover {
+        background-color: #999898;
+        color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 8px 15px rgba(0, 0, 0, 0.4);
+        transition: 0.2s ease-in;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Larger Font: add <code>transition</code> would make hover effect more
+      smooth.
+    </p>
+    <button class="larger-font">Larger Font</button>
+
+    <p>
+      Pure CSS does not support the <code>darken</code> function because it is a
+      function in Sass. Therefore, if we want to achieve the effect of darkening
+      the background color automatically, we however need to manually calculate
+      and set a dark background color. Or, like me, you can simply choose a
+      color with a large color gap. Hint: In this case, white fonts(<code>
+        color: #fff;</code
+      >) are better. Here, I also enhanced the box-shadow effect to make it more
+      realistic.
+    </p>
+    <button class="darker-background">Darker Background</button>
+  </body>
+</html>

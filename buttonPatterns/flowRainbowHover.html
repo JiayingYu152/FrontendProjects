@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowing Rainbow Hover</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: #222;
+        align-items: center;
+        gap: 50px;
+        font-size: 20px;
+      }
+      button {
+        position: relative;
+        width: 400px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+        background: linear-gradient(
+          to right,
+          #03a9f4,
+          #f441b5,
+          #ffeb3b,
+          #03a9f4
+        );
+        background-size: 400%;
+        border-radius: 50px;
+        z-index: 1;
+        cursor: pointer;
+      }
+      button::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        bottom: -5px;
+        right: -5px;
+        background: linear-gradient(
+          to right,
+          #03a9f4,
+          #f441b5,
+          #ffeb3b,
+          #03a9f4
+        );
+        background-size: 400%;
+        border-radius: 50px;
+        z-index: -1;
+        fill: blur(20px);
+      }
+      button:hover {
+        animation: flowing 8s infinite;
+      }
+      button:hover::before {
+        animation: flowing 8s infinite;
+      }
+      @keyframes flowing {
+        100% {
+          background-position: -400% 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button>HOVER ME!</button>
+  </body>
+</html>

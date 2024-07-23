@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        background: #eee;
+        font-size: 18px;
+        transition: 0.2s;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      ul li:nth-child(odd) {
+        background: #f9f9f9;
+      }
+
+      ul li:hover {
+        background: #ddd;
+      }
+
+      ul li.checked {
+        background: #888;
+        color: #fff;
+        text-decoration: line-through;
+      }
+
+      ul li:checked::before {
+        content: "";
+        position: absolute;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        top: 10px;
+        left: 16px;
+        transform: rotate(45deg);
+        height: 15px;
+        width: 8px;
+      }
+
+      .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 12px 16px 12px 16px;
+      }
+
+      .close:hover {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .header {
+        background-color: #3678f4da;
+        padding: 30px 40px;
+        color: white;
+        text-align: center;
+      }
+
+      .header:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      input {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: 75%;
+        padding: 10px;
+        float: left;
+        font-size: 16px;
+        border-radius: 8px 0 0 8px;
+      }
+
+      .AddBtn {
+        padding: 10px;
+        width: 25%;
+        background: #d9d9d9;
+        color: #555;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .AddBtn:hover {
+        background-color: #bbb;
+      }
+
+      .time-info {
+        display: block;
+        font-size: 12px;
+        color: #666;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="myDIV" class="header">
+      <h2>今日计划列表</h2>
+      <input type="text" id="myInput" placeholder="今天要做什么呢...." />
+      <span onclick="newElement()" class="AddBtn"> Add</span>
+    </div>
+    <ul id="myUL">
+      <li>好好学习,天天向上！</li>
+    </ul>
+  </body>
+  <script>
+    var myLiList = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myLiList.length; i++) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      myLiList[i].appendChild(span);
+    }
+
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function () {
+        var parent = this.parentElement;
+        parent.style.display = "none";
+      };
+    }
+
+    var list = document.querySelector("ul");
+    list.addEventListener(
+      "click",
+      function (e) {
+        e.preventDefault();
+        if (e.target.tagName == "LI") {
+          e.target.classList.toggle("checked");
+        }
+      },
+      false
+    );
+
+    function newElement() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("myInput").value;
+      var txt = document.createTextNode(inputValue);
+      li.appendChild(txt);
+      if (inputValue === "" || inputValue.trim() === "") {
+        alert("你得有个计划再加啊！！");
+      } else {
+        var now = new Date();
+        var timeString =
+          now.getFullYear() +
+          "-" +
+          (now.getMonth() + 1) +
+          "-" +
+          now.getDate() +
+          "  " +
+          now.getHours() +
+          ":" +
+          now.getMinutes() +
+          ":" +
+          now.getSeconds();
+        var timeSpan = document.createElement("span");
+        timeSpan.className = "time-info";
+        timeSpan.textContent = "Created by " + timeString;
+        document.getElementById("myUL").appendChild(li);
+      }
+      document.getElementById("myInput").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var parent = this.parentElement;
+          parent.style.display = "none";
+        };
+      }
+    }
+
+    document
+      .getElementById("myInput")
+      .addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          newElement();
+        }
+      });
+  </script>
+</html>

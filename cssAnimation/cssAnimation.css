@@ -1,0 +1,85 @@
+body {
+  margin: 30px auto;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  color: #777777;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    90deg,
+    #fef3cf 0%,
+    #ffffff 60%,
+    #d8e4d8 100%
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    90deg,
+    #fef3cf 0%,
+    #ffffff 60%,
+    #d8e4d8 100%
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative;
+}
+
+.css-animation-effect-go-home-side-icon-container {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 10;
+  top: 10px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.css-animation-effect-return-once-side-icon-container {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 10;
+  top: 45px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.css-animation-effect-go-home-icon,
+.css-animation-effect-return-once-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+#css-animation-effect-go-home-icon-text,
+#css-animation-effect-return-once-icon-text {
+  display: none;
+  padding: 5px;
+  white-space: nowrap;
+}
+
+.animation-single-content {
+  border: 1px solid #777777;
+  width: 90%;
+  border-radius: 12px;
+  padding: 20px 50px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+code {
+  background: #dddddd;
+  color: #000;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.italic-li {
+  font-style: italic;
+}

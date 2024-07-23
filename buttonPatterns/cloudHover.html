@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cute Cloud Hover Effect</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(#00c5fb5a, #66a6ff);
+        align-items: center;
+        gap: 50px;
+        font-size: 20px;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        --c: #fff; /* self-defined attribute, then use var() function to call this attribute */
+        color: var(--c);
+        width: 240px;
+        height: 60px;
+        border: 3px solid var(--c);
+        border-radius: 10px;
+        text-align: center;
+        line-height: 60px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 30px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: 0.5s;
+      }
+      li:hover {
+        color: #66a6ff;
+      }
+      li:hover span {
+        transform: translateY(0) scale(2);
+      }
+      span {
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        background-color: var(--c);
+        border-radius: 50%;
+        transform: translateY(150%);
+        left: calc((var(--n) - 1) * 25%);
+        transition: transform 0.5s;
+      }
+      .reverse span {
+        transition-delay: calc((5 - var(--n)) * 0.15s);
+      }
+      .forward span {
+        transition-delay: calc(var(--n) * 0.15s);
+      }
+      span:nth-child(1) {
+        --n: 1;
+      }
+      span:nth-child(2) {
+        --n: 2;
+      }
+      span:nth-child(3) {
+        --n: 3;
+      }
+      span:nth-child(4) {
+        --n: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li class="forward">
+          Forward<span></span><span></span><span></span><span></span>
+        </li>
+        <li class="reverse">
+          Backward<span></span><span></span><span></span><span></span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+.flight-booker-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 50px auto;
+  width: 400px;
+  height: 600px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px #aaaaaa;
+  padding: 30px;
+}

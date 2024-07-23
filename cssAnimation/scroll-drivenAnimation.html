@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Scroll-Driven Animation</title>
+    <style>
+      html,
+      body {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: --scroll-position-delay 0.15s linear; /* adding this, make --scroll-position-delay SLOWER start than --scroll-position, to make it a time gap, achieving the same effect of JavaScript timer functionality, check the center component to see the difference before two field while scrolling*/
+        --scroll-velocity: calc(
+          var(--scroll-position) - var(--scroll-position-delay)
+        ); /* we can print this time gap out, to see the difference*/
+        --scroll-dynamic: calc(
+          var(--scroll-velocity) / var(--scroll-velocity)
+        ); /* No matter it is POSITIVE or NEGATIVE, it would equal to 1 represeting SCROLLING. Once it is ZERO meaning it QUITS SCROLLING. We need only two scroll status. */
+        /* width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: #000;
+        align-items: center;*/
+        overflow-y: auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .debug-used {
+        /* this area is common-used: set the component at the center of the screen*/
+        position: fixed;
+        padding: 15px;
+        width: 300px;
+        background: #fff;
+        border: 1px solid royalblue;
+        border-radius: 8px;
+        font-size: 16px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* stop here*/
+        counter-reset: scroll-position calc(var(--scroll-position) * 1)
+          /* help for seeing the calculation during the scroll event*/
+          scroll-position-delay calc(var(--scroll-position-delay) * 1)
+          /* help for seeing the calculation of scrolling speed*/;
+      }
+
+      [data-id="--scroll-position"]::after {
+        content: "--scroll-position: " counter(scroll-position);
+      }
+      [data-id="--scroll-position-delay"]::after {
+        content: "--scroll-position-delay: " counter(scroll-position-delay);
+      }
+      [data-id="--scroll-velocity"]::after {
+        /* to see the time gap / time difference from "--scroll-position" and "--scroll-position-delay"*/
+        content: "--scroll-velocity: " counter(scroll-position-delay);
+      }
+
+      @property --scroll-position {
+        syntax: "<number>"; /* the syntax of the property value, is NUMBER */
+        inherits: true;
+        initial-value: 0; /* default value, is zero*/
+        /* with this property, we do not need: from {--scroll-position: 0;} , so we comment it */
+      }
+
+      /* same as the above*/
+      @property --scroll-position-delay {
+        syntax: "<number>";
+        inherits: true;
+        initial-value: 0;
+      }
+
+      /* same as the above*/
+      @property --scroll-velocity {
+        syntax: "<number>";
+        inherits: true;
+        initial-value: 0;
+      }
+
+      @keyframes adjustPosition {
+        /* from {
+          --scroll-position: 0;
+        } */
+        to {
+          --scroll-position: 100;
+          --scroll-position-delay: 100; /* delay the scroll position, help us calculate the scrolling speed */
+        }
+      }
+
+      :root {
+        animation: adjustPosition 3s linear;
+        animation-timeline: scroll(
+
+        ); /* the animation will be triggered by the scroll event. We can know the scroll position by setting this. */
+      }
+      .component {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        background-color: royalblue;
+        border-radius: 8px;
+        width: 60px;
+        height: 60px;
+        transform: translateX(
+          calc(var(--scroll-dynamic) * 100%)
+        ); /*detect scroll event according to --scroll-dynamic calculation of ONE or ZERO, ONE means scrolling, ZERO means quit */
+        transition: 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://github.com/JiayingYu152/image-and-files/raw/629b96f49b8c49650768519f81eb3d24a71dd26c/sunset-city.jpg"
+      alt="sunset in city"
+    />
+    <a class="component" href="#"> </a>
+    <div class="debug-used">
+      <div data-id="--scroll-position"></div>
+      <div data-id="--scroll-position-delay"></div>
+      <div data-id="--scroll-velocity"></div>
+    </div>
+  </body>
+</html>

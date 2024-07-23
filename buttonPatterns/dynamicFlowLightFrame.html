@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic flow light frame</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        min-height: 100vh;
+        background-color: #222;
+      }
+      .frame {
+        padding: 5% 10%;
+        background-color: #222;
+        border-radius: 20px;
+        color: #66ddf7;
+        font-size: 36px;
+        position: relative;
+        overflow: hidden;
+        z-index: 0; /* This is the CORE, we are setting any figure for z-index, providing a z-index for its child. Otherwise, it would automatically set as auto or inherit. In this case, we cannot set up the rotate animation.*/
+      }
+      .frame::before {
+        content: "";
+        width: 200%;
+        height: 300%;
+        background-color: #22292f;
+        position: absolute;
+        left: -50%;
+        top: -100%;
+        background-image: conic-gradient(
+          transparent,
+          #66ddf7,
+          transparent 30%
+        ); /* this is the cone light starting from the core center of the frame, spreading and lighting around*/
+        z-index: -2;
+        animation: rotate 5s linear infinite;
+      }
+      .frame::after {
+        content: "";
+        position: absolute;
+        inset: 0.5rem;
+        background-color: #222;
+        border-radius: 20px;
+        z-index: -1;
+      }
+      @keyframes rotate {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">FRAME</div>
+  </body>
+</html>
