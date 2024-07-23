@@ -4,6 +4,7 @@ import "./App.css";
 import ContactForm from "./practice/ContactForm";
 import FoldingDivItem from "./practice/FoldingDivItem";
 import FlightBooker from "./practice/FlightBooker";
+import GenerateTable from "./practice/GenerateTable";
 
 function Home() {
   return (
@@ -76,6 +77,27 @@ function Home() {
             </ul>
           </p>
         </li>
+
+        <li>
+          <Link to="/generate-table" className="li-title">
+            Generate Table Practice{" "}
+          </Link>
+        </li>
+        <p className="important-paragraph">
+          <a href="https://www.greatfrontend.com/questions/user-interface/generate-table">
+            Link
+          </a>
+          <h3>考点/内容点:</h3>
+          <ul>
+            <li>如何生成一个table，并且css调整table的样式</li>
+            <li>useState: 改变rows和columns数值，以及tableData的生成</li>
+            <li>对 Map 的映射与使用, 包括如何生成这个table 以及在table上数字的排列</li>
+            <li>
+              易漏点： 对于onChange 需要加上 Number() function 开转化数字的生成
+            </li>
+            <li>难点/算法：蛇形遍历2d array</li>
+          </ul>
+        </p>
       </ul>
     </div>
   );
@@ -89,6 +111,7 @@ function App() {
         <Route path="/contact-form" element={<ContactForm />} />
         <Route path="accordion" element={<FoldingDivItem />} />
         <Route path="/flight-booker" element={<FlightBooker />} />
+        <Route path="/generate-table" element={<GenerateTable />} />
       </Routes>
     </Router>
   );
