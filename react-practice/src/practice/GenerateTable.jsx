@@ -1,7 +1,10 @@
 import "./generateTable.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const GenerateTable = () => {
+  const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
+
   const [rows, setRows] = useState();
   const [columns, setColumns] = useState();
   const [tableData, setTableData] = useState([]);
@@ -48,6 +51,13 @@ const GenerateTable = () => {
 
   return (
     <div className="generate-table-page-container">
+        <button
+        style={{ position: "absolute", top: 0, left: 0 }}
+        onClick={() => navigate("/")}
+      >
+        Going back to home page
+      </button>
+      
       <form onSubmit={formSubmit}>
         <label>
           Rows:

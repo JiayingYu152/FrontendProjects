@@ -6,6 +6,7 @@ import FoldingDivItem from "./practice/FoldingDivItem";
 import FlightBooker from "./practice/FlightBooker";
 import GenerateTable from "./practice/GenerateTable";
 import CssAdjustment from "./practice/CssAdjustment";
+import ProgressBar from "./practice/ProgressBar";
 
 function Home() {
   return (
@@ -145,6 +146,86 @@ function Home() {
             </li>
           </ul>
         </p>
+
+        <li>
+          <Link to="/progress-bar" className="li-title">
+            CSS Adjustment
+          </Link>
+        </li>
+        <p className="important-paragraph">
+          <a href="https://www.greatfrontend.com/questions/user-interface/progress-bar">
+            Link
+          </a>
+          <h3>考点/内容点:</h3>
+          <ul>
+            <li>progress bar component</li>
+            <li>
+              css: <code>overflow: hidden</code>: 处理parent 与 children
+              之间的层级关系
+            </li>
+          </ul>
+          <h4>补充学习: ARIA (Accessible Rich Internet Applications) 属性</h4>
+          <ul>
+            <li>
+              ARIA (Accessible Rich Internet Applications)
+              属性是一组定义和应用于 HTML 元素的属性，用于增强 Web
+              应用的可访问性。ARIA
+              属性通过提供额外的语义信息，使得屏幕阅读器和其他辅助技术能够更好地理解和解释复杂的用户界面组件。
+            </li>{" "}
+            <li>
+              这对于残障用户尤其重要，因为它可以帮助他们更有效地与 Web
+              内容交互。
+            </li>
+            <li>
+              <code>role</code>: 定义元素的角色或用途,例如
+              button、progressbar、alert 等。它告诉辅助技术这个元素是什么。
+            </li>
+            <li>
+              <code>aria-disabled</code>: [状态属性(State Attributes)]
+              表示元素是否被禁用，值为 true 或 false。
+            </li>
+            <li>
+              <code>aria-expanded</code>: [状态属性(State Attributes)]
+              表示可折叠的元素是否已展开，值为 true 或 false。
+            </li>
+            <li>
+              <code>aria-hidden</code>: [状态属性(State Attributes)]
+              表示元素是否对辅助技术隐藏，值为 true 或 false
+            </li>
+            <li>
+              <code>aria-label</code>: 为元素提供文本标签，用于描述该元素。
+            </li>
+            <li>
+              <code>aria-labelledby</code>: 指定一个或多个元素的
+              ID，这些元素的文本内容将作为当前元素的标签。
+            </li>
+            <li>
+              <code>aria-describedby</code>: 指定一个或多个元素的
+              ID，这些元素的文本内容将作为当前元素的描述。
+            </li>
+            <li>
+              <code>aria-valuenow</code>: 表示当前值，用于进度条、滑块等元素。
+            </li>
+            <li>
+              <code>aria-valuemin</code>: 表示可选值的最小值。
+            </li>
+            <li>
+              <code>aria-valuemax</code>: 表示可选值的最大值。
+            </li>
+            <li>
+              <code>aria-live</code>: 表示元素的内容会动态更新，值可以是
+              off、polite 或 assertive。
+            </li>
+            <li>
+              <code>aria-controls</code>: 表示当前元素控制的另一个元素的 ID。
+            </li>
+            <li>
+              <code>aria-current</code>:
+              表示当前页面中活动的项目，如导航菜单中的当前选项，值可以是
+              page、step、location、date、time 或 true。
+            </li>
+          </ul>
+        </p>
       </ul>
     </div>
   );
@@ -160,6 +241,7 @@ function App() {
         <Route path="/flight-booker" element={<FlightBooker />} />
         <Route path="/generate-table" element={<GenerateTable />} />
         <Route path="/css-adjustment" element={<CssAdjustment />} />
+        <Route path="/progress-bar" element={<ProgressBar />} />
       </Routes>
     </Router>
   );
