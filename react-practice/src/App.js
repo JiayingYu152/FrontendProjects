@@ -5,6 +5,7 @@ import ContactForm from "./practice/ContactForm";
 import FoldingDivItem from "./practice/FoldingDivItem";
 import FlightBooker from "./practice/FlightBooker";
 import GenerateTable from "./practice/GenerateTable";
+import CssAdjustment from "./practice/CssAdjustment";
 
 function Home() {
   return (
@@ -91,11 +92,57 @@ function Home() {
           <ul>
             <li>如何生成一个table，并且css调整table的样式</li>
             <li>useState: 改变rows和columns数值，以及tableData的生成</li>
-            <li>对 Map 的映射与使用, 包括如何生成这个table 以及在table上数字的排列</li>
+            <li>
+              对 Map 的映射与使用, 包括如何生成这个table 以及在table上数字的排列
+            </li>
             <li>
               易漏点： 对于onChange 需要加上 Number() function 开转化数字的生成
             </li>
             <li>难点/算法：蛇形遍历2d array</li>
+          </ul>
+        </p>
+
+        <li>
+          <Link to="/css-Adjustment" className="li-title">
+            CSS Adjustment
+          </Link>
+        </li>
+        <p className="important-paragraph">
+          <a href="https://www.greatfrontend.com/questions/user-interface/holy-grail">
+            Link
+          </a>
+          <h3>考点/内容点:</h3>
+          <ul>
+            <li>css 布局</li>
+            <li>对display: flex 的应用</li>
+          </ul>
+          <h4>补充学习:</h4>
+          <ul>
+            <li>
+              {" "}
+              <code>#root</code> 是一个常见的命名约定，用于 React 应用的根 DOM
+              元素。在 React 应用中，通常在 HTML 文件中会有一个带有{" "}
+              <code>id="root"</code> 的 div 元素, React
+              组件树会挂载到这个元素上。
+            </li>
+            <li>
+              <strong>
+                <code>min-height: 100vh</code> 和 <code>height: 100vh</code>{" "}
+                的区别
+              </strong>
+              :
+              <ul>
+                <li>
+                  <code>height: 100vh</code> 设置元素的高度为视口高度的
+                  100%。无论内容多少，元素的高度都会是视口高度。
+                </li>
+                <li>
+                  {" "}
+                  <code>min-height: 100vh</code> 设置元素的最小高度为视口高度的
+                  100%。如果内容不足，它的高度是视口高度；如果内容超过视口高度，元素的高度会根据内容增加。
+                </li>
+              </ul>
+            </li>
           </ul>
         </p>
       </ul>
@@ -112,6 +159,7 @@ function App() {
         <Route path="accordion" element={<FoldingDivItem />} />
         <Route path="/flight-booker" element={<FlightBooker />} />
         <Route path="/generate-table" element={<GenerateTable />} />
+        <Route path="/css-adjustment" element={<CssAdjustment />} />
       </Routes>
     </Router>
   );
