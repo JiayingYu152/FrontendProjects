@@ -1,0 +1,61 @@
+body {
+  margin: 30px auto;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  color: #777777;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    90deg,
+    #fef3cf 0%,
+    #ffffff 60%,
+    #d8e4d8 100%
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    90deg,
+    #fef3cf 0%,
+    #ffffff 60%,
+    #d8e4d8 100%
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative;
+}
+
+main {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.button-patterns-page-five-hover-states-container {
+  border: 1px solid #777777;
+  width: 90%;
+  border-radius: 12px;
+  padding: 20px 50px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.button-patterns-page-single-content {
+  border: 1px solid #777777;
+  width: 90%;
+  border-radius: 12px;
+  padding: 20px 50px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

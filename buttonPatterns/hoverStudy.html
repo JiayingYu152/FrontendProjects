@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>:hover Study</title>
+    <style>
+      .hover-study-single-content {
+        border: 1px solid #0b78e3;
+        border-radius: 16px;
+        margin: 20px 0;
+        padding: 10px 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        background-color: #4285f4;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0b78e3;
+      }
+
+      .parent {
+        margin: 20px 0;
+      }
+
+      .parent:hover .child {
+        color: red;
+      }
+
+      p {
+        color: #7b7b7b;
+      }
+
+      h4 {
+        margin: 20px 0 10px;
+      }
+
+      h4:hover + p {
+        color: green;
+      }
+
+      h4:hover ~ p {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hover-study-single-content">
+      <h4>1. element:hover</h4>
+      <p>
+        Indicates that when the mouse hovers over this element, the style of
+        this element will change.
+      </p>
+      <button>Normal Button</button>
+    </div>
+
+    <div class="hover-study-single-content">
+      <h4>2. element:hover element</h4>
+      <p>
+        Indicates that when the mouse hovers over the parent element, the style
+        of its child elements will change.
+      </p>
+      <div class="parent">
+        Hover over this text
+        <p class="child">Child element changes color when parent is hovered.</p>
+      </div>
+    </div>
+
+    <div class="hover-study-single-content">
+      <h4>3. element:hover + element</h4>
+      <p>
+        Indicates that when the mouse hovers over an element, the style of its
+        adjacent sibling element will change.
+      </p>
+      <h4>Hover over this heading</h4>
+      <p>First paragraph changes color when heading is hovered.</p>
+    </div>
+
+    <div class="hover-study-single-content">
+      <h4>4. element:hover ~ element</h4>
+      <p>
+        Indicates that when the mouse hovers over an element, the style of all
+        its subsequent sibling elements will change, regardless of whether these
+        sibling elements are adjacent.
+      </p>
+      <h4>Hover over this heading</h4>
+      <p>First paragraph changes color when heading is hovered.</p>
+      <p>Second paragraph also changes color when heading is hovered.</p>
+    </div>
+  </body>
+</html>
