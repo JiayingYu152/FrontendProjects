@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circular Magnification</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: #d8e4d8;
+        align-items: center;
+      }
+      .avatar {
+        background-image: url("https://github.com/JiayingYu152/image-and-files/raw/aa67a0b6b428e5f92e988f4e32eb5ed02770aa2b/sunset-city.jpg");
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+      }
+      .avatar::before,
+      .avatar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        display: block;
+      }
+      .avatar::before {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .avatar::after {
+        background: inherit;
+        clip-path: circle(0% at 50% 50%);
+        transition: 0.3s;
+      }
+      .avatar:hover::after {
+        clip-path: circle(50% at 50% 50%);
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 900;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="avatar">
+      <span>HOVER ME!</span>
+    </div>
+  </body>
+</html>

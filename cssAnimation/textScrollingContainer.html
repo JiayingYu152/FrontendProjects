@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Scrolling Container</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: #334155;
+        align-items: center;
+      }
+      .tag-list {
+        width: 30rem;
+        font-family: "Montserrat", sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .inner-container {
+        width: fit-content;
+        display: flex;
+        gap: 1rem;
+        margin: 20px;
+        animation: loop 5s linear infinite;
+      }
+      .tag {
+        display: flex;
+        align-items: center;
+        gap: 0 0.2rem;
+        color: #e2e8f0;
+        font-size: 0.9rem;
+        background-color: #334155;
+        padding: 0.7rem 1rem;
+        border-radius: 0.4rem;
+        box-shadow: 0 0.1rem 0.2rem #00000033, 0 0.1rem 0.5rem #0000004d,
+          0 0.2rem 1.5rem #00000066;
+      }
+      .tag span {
+        font-size: 1.2rem;
+        color: #64748b;
+      }
+      .fade {
+        position: absolute;
+        background: linear-gradient(
+          90deg,
+          #1e293b,
+          transparent 30%,
+          transparent 70%,
+          #1e293b
+        );
+        inset: 0;
+        pointer-events: none;
+      }
+      @keyframes loop {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tag-list">
+      <div class="inner-container">
+        <div class="tag"><span>#</span>HTML</div>
+        <div class="tag"><span>#</span>CSS</div>
+        <div class="tag"><span>#</span>JAVA</div>
+        <div class="tag"><span>#</span>C</div>
+        <div class="tag"><span>#</span>Python</div>
+        <div class="tag"><span>#</span>R Studio</div>
+        <div class="tag"><span>#</span>MatLab</div>
+        <div class="tag"><span>#</span>JavaScript</div>
+        <div class="tag"><span>#</span>TypeScript</div>
+        <div class="tag"><span>#</span>PHP</div>
+      </div>
+      <div class="fade"></div>
+    </div>
+  </body>
+</html>
