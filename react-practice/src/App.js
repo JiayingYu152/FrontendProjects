@@ -7,6 +7,7 @@ import FlightBooker from "./practice/FlightBooker";
 import GenerateTable from "./practice/GenerateTable";
 import CssAdjustment from "./practice/CssAdjustment";
 import ProgressBar from "./practice/ProgressBar";
+import TemperatureConverter from "./practice/TemperatureConverter";
 
 function Home() {
   return (
@@ -84,148 +85,179 @@ function Home() {
           <Link to="/generate-table" className="li-title">
             Generate Table Practice{" "}
           </Link>
+          <p className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/generate-table">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>如何生成一个table，并且css调整table的样式</li>
+              <li>useState: 改变rows和columns数值，以及tableData的生成</li>
+              <li>
+                对 Map 的映射与使用, 包括如何生成这个table
+                以及在table上数字的排列
+              </li>
+              <li>
+                易漏点： 对于onChange 需要加上 Number() function
+                开转化数字的生成
+              </li>
+              <li>难点/算法：蛇形遍历2d array</li>
+            </ul>
+          </p>
         </li>
-        <p className="important-paragraph">
-          <a href="https://www.greatfrontend.com/questions/user-interface/generate-table">
-            Link
-          </a>
-          <h3>考点/内容点:</h3>
-          <ul>
-            <li>如何生成一个table，并且css调整table的样式</li>
-            <li>useState: 改变rows和columns数值，以及tableData的生成</li>
-            <li>
-              对 Map 的映射与使用, 包括如何生成这个table 以及在table上数字的排列
-            </li>
-            <li>
-              易漏点： 对于onChange 需要加上 Number() function 开转化数字的生成
-            </li>
-            <li>难点/算法：蛇形遍历2d array</li>
-          </ul>
-        </p>
 
         <li>
           <Link to="/css-Adjustment" className="li-title">
             CSS Adjustment
           </Link>
+          <p className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/holy-grail">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>css 布局</li>
+              <li>对display: flex 的应用</li>
+            </ul>
+            <h4>补充学习:</h4>
+            <ul>
+              <li>
+                {" "}
+                <code>#root</code> 是一个常见的命名约定，用于 React 应用的根 DOM
+                元素。在 React 应用中，通常在 HTML 文件中会有一个带有{" "}
+                <code>id="root"</code> 的 div 元素, React
+                组件树会挂载到这个元素上。
+              </li>
+              <li>
+                <strong>
+                  <code>min-height: 100vh</code> 和 <code>height: 100vh</code>{" "}
+                  的区别
+                </strong>
+                :
+                <ul>
+                  <li>
+                    <code>height: 100vh</code> 设置元素的高度为视口高度的
+                    100%。无论内容多少，元素的高度都会是视口高度。
+                  </li>
+                  <li>
+                    {" "}
+                    <code>min-height: 100vh</code>{" "}
+                    设置元素的最小高度为视口高度的
+                    100%。如果内容不足，它的高度是视口高度；如果内容超过视口高度，元素的高度会根据内容增加。
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </p>
         </li>
-        <p className="important-paragraph">
-          <a href="https://www.greatfrontend.com/questions/user-interface/holy-grail">
-            Link
-          </a>
-          <h3>考点/内容点:</h3>
-          <ul>
-            <li>css 布局</li>
-            <li>对display: flex 的应用</li>
-          </ul>
-          <h4>补充学习:</h4>
-          <ul>
-            <li>
-              {" "}
-              <code>#root</code> 是一个常见的命名约定，用于 React 应用的根 DOM
-              元素。在 React 应用中，通常在 HTML 文件中会有一个带有{" "}
-              <code>id="root"</code> 的 div 元素, React
-              组件树会挂载到这个元素上。
-            </li>
-            <li>
-              <strong>
-                <code>min-height: 100vh</code> 和 <code>height: 100vh</code>{" "}
-                的区别
-              </strong>
-              :
-              <ul>
-                <li>
-                  <code>height: 100vh</code> 设置元素的高度为视口高度的
-                  100%。无论内容多少，元素的高度都会是视口高度。
-                </li>
-                <li>
-                  {" "}
-                  <code>min-height: 100vh</code> 设置元素的最小高度为视口高度的
-                  100%。如果内容不足，它的高度是视口高度；如果内容超过视口高度，元素的高度会根据内容增加。
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </p>
 
         <li>
           <Link to="/progress-bar" className="li-title">
             CSS Adjustment
           </Link>
+          <p className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/progress-bar">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>progress bar component</li>
+              <li>
+                css: <code>overflow: hidden</code>: 处理parent 与 children
+                之间的层级关系
+              </li>
+            </ul>
+            <h4>补充学习: ARIA (Accessible Rich Internet Applications) 属性</h4>
+            <ul>
+              <li>
+                ARIA (Accessible Rich Internet Applications)
+                属性是一组定义和应用于 HTML 元素的属性，用于增强 Web
+                应用的可访问性。ARIA
+                属性通过提供额外的语义信息，使得屏幕阅读器和其他辅助技术能够更好地理解和解释复杂的用户界面组件。
+              </li>{" "}
+              <li>
+                这对于残障用户尤其重要，因为它可以帮助他们更有效地与 Web
+                内容交互。
+              </li>
+              <li>
+                <code>role</code>: 定义元素的角色或用途,例如
+                button、progressbar、alert 等。它告诉辅助技术这个元素是什么。
+              </li>
+              <li>
+                <code>aria-disabled</code>: [状态属性(State Attributes)]
+                表示元素是否被禁用，值为 true 或 false。
+              </li>
+              <li>
+                <code>aria-expanded</code>: [状态属性(State Attributes)]
+                表示可折叠的元素是否已展开，值为 true 或 false。
+              </li>
+              <li>
+                <code>aria-hidden</code>: [状态属性(State Attributes)]
+                表示元素是否对辅助技术隐藏，值为 true 或 false
+              </li>
+              <li>
+                <code>aria-label</code>: 为元素提供文本标签，用于描述该元素。
+              </li>
+              <li>
+                <code>aria-labelledby</code>: 指定一个或多个元素的
+                ID，这些元素的文本内容将作为当前元素的标签。
+              </li>
+              <li>
+                <code>aria-describedby</code>: 指定一个或多个元素的
+                ID，这些元素的文本内容将作为当前元素的描述。
+              </li>
+              <li>
+                <code>aria-valuenow</code>: 表示当前值，用于进度条、滑块等元素。
+              </li>
+              <li>
+                <code>aria-valuemin</code>: 表示可选值的最小值。
+              </li>
+              <li>
+                <code>aria-valuemax</code>: 表示可选值的最大值。
+              </li>
+              <li>
+                <code>aria-live</code>: 表示元素的内容会动态更新，值可以是
+                off、polite 或 assertive。
+              </li>
+              <li>
+                <code>aria-controls</code>: 表示当前元素控制的另一个元素的 ID。
+              </li>
+              <li>
+                <code>aria-current</code>:
+                表示当前页面中活动的项目，如导航菜单中的当前选项，值可以是
+                page、step、location、date、time 或 true。
+              </li>
+            </ul>
+          </p>
         </li>
-        <p className="important-paragraph">
-          <a href="https://www.greatfrontend.com/questions/user-interface/progress-bar">
-            Link
-          </a>
-          <h3>考点/内容点:</h3>
-          <ul>
-            <li>progress bar component</li>
-            <li>
-              css: <code>overflow: hidden</code>: 处理parent 与 children
-              之间的层级关系
-            </li>
-          </ul>
-          <h4>补充学习: ARIA (Accessible Rich Internet Applications) 属性</h4>
-          <ul>
-            <li>
-              ARIA (Accessible Rich Internet Applications)
-              属性是一组定义和应用于 HTML 元素的属性，用于增强 Web
-              应用的可访问性。ARIA
-              属性通过提供额外的语义信息，使得屏幕阅读器和其他辅助技术能够更好地理解和解释复杂的用户界面组件。
-            </li>{" "}
-            <li>
-              这对于残障用户尤其重要，因为它可以帮助他们更有效地与 Web
-              内容交互。
-            </li>
-            <li>
-              <code>role</code>: 定义元素的角色或用途,例如
-              button、progressbar、alert 等。它告诉辅助技术这个元素是什么。
-            </li>
-            <li>
-              <code>aria-disabled</code>: [状态属性(State Attributes)]
-              表示元素是否被禁用，值为 true 或 false。
-            </li>
-            <li>
-              <code>aria-expanded</code>: [状态属性(State Attributes)]
-              表示可折叠的元素是否已展开，值为 true 或 false。
-            </li>
-            <li>
-              <code>aria-hidden</code>: [状态属性(State Attributes)]
-              表示元素是否对辅助技术隐藏，值为 true 或 false
-            </li>
-            <li>
-              <code>aria-label</code>: 为元素提供文本标签，用于描述该元素。
-            </li>
-            <li>
-              <code>aria-labelledby</code>: 指定一个或多个元素的
-              ID，这些元素的文本内容将作为当前元素的标签。
-            </li>
-            <li>
-              <code>aria-describedby</code>: 指定一个或多个元素的
-              ID，这些元素的文本内容将作为当前元素的描述。
-            </li>
-            <li>
-              <code>aria-valuenow</code>: 表示当前值，用于进度条、滑块等元素。
-            </li>
-            <li>
-              <code>aria-valuemin</code>: 表示可选值的最小值。
-            </li>
-            <li>
-              <code>aria-valuemax</code>: 表示可选值的最大值。
-            </li>
-            <li>
-              <code>aria-live</code>: 表示元素的内容会动态更新，值可以是
-              off、polite 或 assertive。
-            </li>
-            <li>
-              <code>aria-controls</code>: 表示当前元素控制的另一个元素的 ID。
-            </li>
-            <li>
-              <code>aria-current</code>:
-              表示当前页面中活动的项目，如导航菜单中的当前选项，值可以是
-              page、step、location、date、time 或 true。
-            </li>
-          </ul>
-        </p>
+
+        <li>
+          <Link to="./temperature-converter" className="li-title">
+            Temperature Converter
+          </Link>
+          <p className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/temperature-converter">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>如何通过hook 改变两个input的value</li>
+              <li>
+                细节，对corner
+                case的处理。description中提到以下两点，是需要自己去跟面试官clarify的，而不是题目自带的。
+                Clarification之后就是如何implement这两个条件了
+                <ul>
+                  <li>Round to 4 decimal places where necessary.</li>
+                  <li>
+                    {" "}
+                    If a non-numerical string is entered into one input, the
+                    other input will be blank.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </p>
+        </li>
       </ul>
     </div>
   );
@@ -242,6 +274,10 @@ function App() {
         <Route path="/generate-table" element={<GenerateTable />} />
         <Route path="/css-adjustment" element={<CssAdjustment />} />
         <Route path="/progress-bar" element={<ProgressBar />} />
+        <Route
+          path="/temperature-converter"
+          element={<TemperatureConverter />}
+        />
       </Routes>
     </Router>
   );
