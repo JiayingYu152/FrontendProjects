@@ -8,6 +8,7 @@ import GenerateTable from "./practice/GenerateTable";
 import CssAdjustment from "./practice/CssAdjustment";
 import ProgressBar from "./practice/ProgressBar";
 import TemperatureConverter from "./practice/TemperatureConverter";
+import MortgageCalculator from "./practice/MortgageCalculator";
 
 function Home() {
   return (
@@ -218,6 +219,27 @@ function Home() {
               <li>
                 <code>aria-live</code>: 表示元素的内容会动态更新，值可以是
                 off、polite 或 assertive。
+                <ul>
+                  <li>
+                    当 aria-live 设置为 polite
+                    时，屏幕阅读器会在当前活动完成之后，礼貌地通知用户内容的变化。也就是说，它不会打断用户正在进行的操作或阅读，而是会等到一个适当的暂停时机再通知用户。这个设置适用于不需要立即打断用户的更新，比如状态消息、进度指示等。
+                    <code>aria-live="polite"</code>{" "}
+                    适用于以下情况：更新非紧急状态消息; 显示或隐藏提示信息;
+                    动态加载的内容，用户不需要立即知道
+                  </li>
+                  <li>
+                    off:
+                    表示不希望屏幕阅读器通知用户该区域的内容变化。默认情况下，动态内容区域的
+                    aria-live 属性是 off。
+                  </li>
+                  <li>
+                    assertive:
+                    表示屏幕阅读器应立即打断当前操作，并尽快通知用户内容变化。这个设置适用于需要立即引起用户注意的重要消息或警告。
+                    <code>aria-live="assertive"</code>{" "}
+                    适用于以下情况：显示重要的警告或错误消息;
+                    需要用户立即关注的紧急更新.
+                  </li>
+                </ul>
               </li>
               <li>
                 <code>aria-controls</code>: 表示当前元素控制的另一个元素的 ID。
@@ -258,6 +280,188 @@ function Home() {
             </ul>
           </p>
         </li>
+
+        <li>
+          <Link to="./mortgage-calculator" className="li-title">
+            Mortgage Calculator
+          </Link>
+          <p className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/mortgage-calculator">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>
+                关于 form 表单的 <code>onSubmit</code> 操作，需要先添加{" "}
+                <code> e.preventDefault(); </code> 来阻止默认表单提交行为。
+              </li>
+              <li>
+                通过 <code>FormData</code>{" "}
+                对象来构建表示表单数据的键值对集合的接口，
+                <code>new FormData(e.target)</code> 会创建一个新的{" "}
+                <code>FormData</code> 对象，其中包含了表单 <code>onSubmit</code>{" "}
+                事件触发时所有的输入字段及其对应的值。然后通过{" "}
+                <code>FormData.get(name)</code>方法会根据指定的键（这里是
+                "loan-amount"）返回对应的表单字段的值。
+              </li>
+              <li>
+                关于 <code>parseFloat()</code>: 是一个 JavaScript
+                内置的函数，用于解析一个字符串参数并返回一个浮点数。它会忽略字符串中的前导和尾随空格，直到它找到第一个不是数字的字符为止。
+                例如，如果 data.get("loan-amount") 返回的是字符串
+                "100000"，parseFloat("100000") 会将其转换为浮点数
+                100000.0。在Mortgage Calculator 这个case中，调用{" "}
+                <code>parseFloat()</code>{" "}
+                是为了确保从表单获取到的值是数值类型，以便后续进行数学运算。
+              </li>
+              <li>
+                {" "}
+                label 中的 "step"属性：定义了用户输入的最小步长为
+                0.01。这意味着用户可以输入或通过增加/减少按钮调整的最小单位是
+                0.01。它有助于限制用户输入的数值，使其符合预期的精度要求，特别适用于需要高精度的数值输入，如利率、体重等。{" "}
+              </li>
+              <li>
+                aria-live 中的 "polite": 当 aria-live 设置为 polite
+                时，屏幕阅读器会在当前活动完成之后，礼貌地通知用户内容的变化。也就是说，它不会打断用户正在进行的操作或阅读，而是会等到一个适当的暂停时机再通知用户。这个设置适用于不需要立即打断用户的更新，比如状态消息、进度指示等。
+              </li>
+            </ul>
+            <h4>补充学习：</h4>
+            <ol>
+              <li>
+                <h5>
+                  <code>FormData</code> 接口
+                </h5>
+                <ul>
+                  <li>
+                    <code>FormData</code>{" "}
+                    是浏览器原生提供的一个接口，用于构建键值对的集合，通常用于表示表单数据。它主要用于将表单数据传输到服务器，但也可以在客户端进行数据处理。
+                  </li>
+                  <li>
+                    <strong>
+                      <code>FormData</code>对象的两种方式创建
+                    </strong>
+                    ：【当使用表单元素创建 FormData
+                    对象时，它会自动包含该表单中的所有输入字段及其对应的值。】
+                    <ol>
+                      <li>
+                        <strong>空的 FormData 对象:</strong>{" "}
+                        <code>const formData = new FormData();</code>{" "}
+                        (也就是在Mortgage Calculator中使用的方法)
+                      </li>
+                      <li>
+                        <strong>从一个表单元素创建 FormData 对象：</strong>{" "}
+                        <code>
+                          const form = document.querySelector('form'); const
+                          formData = new FormData(form);
+                        </code>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <strong>常用方法</strong>:
+                    <ul>
+                      <li>
+                        <strong>
+                          <code>append(name, value)</code>
+                        </strong>
+                        ：向 FormData 对象中添加一个新的键值对。
+                      </li>
+                      <li>
+                        <strong>
+                          <code> get(name) </code>
+                        </strong>
+                        : 获取指定键的值。
+                      </li>
+                      <li>
+                        <strong>
+                          <code> getAll(name) </code>
+                        </strong>
+                        : 获取指定键的所有值（当一个键有多个值时）
+                      </li>
+                      <li>
+                        <strong>
+                          <code> has(name) </code>
+                        </strong>
+                        : 检查 FormData 对象中是否包含指定键。
+                      </li>
+                      <li>
+                        <strong>
+                          <code> delete(name) </code>
+                        </strong>
+                        : 删除指定键及其对应的值
+                      </li>
+                      <li>
+                        <strong>
+                          <code> set(name, value)</code>
+                        </strong>
+                        : 设置指定键的值，如果键已经存在，则更新值。
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Use Cases:</strong>
+                    <ul>
+                      <li>创建表单和提交事件处理函数</li>
+                      <li>构建用于发送 AJAX 请求的数据：</li>
+                      <li>上传文件</li>
+                      <li>动态添加数据</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h5>
+                  <code>Intl.NumberFormat</code> 接口
+                </h5>
+                <ul>
+                  <li>
+                    {" "}
+                    <code>Intl.NumberFormat</code>是 JavaScript 提供的国际化
+                    API，用于将数字格式化为人类可读的字符串。它可以根据指定的区域设置、样式和其他选项来格式化数字。
+                  </li>
+                  <li>
+                    在Mortgage Calculator中, 我们使用了{" "}
+                    <strong>
+                      <code>
+                        {" "}
+                        const currencyFormatter = new Intl.NumberFormat('en-US',
+                        ... );
+                      </code>
+                    </strong>{" "}
+                    用来格式化计算结果，使其以货币的形式显示{" "}
+                  </li>
+                  <li>
+                    参数说明：
+                    <ol>
+                      <li>
+                        <strong>区域设置（locale）</strong>: 'en-US'
+                        表示美国的英语区域设置。这决定了数字格式化的语言和区域。例如，使用
+                        en-US 区域设置时，数字会按照美国的格式显示。
+                      </li>
+                      <li>
+                        <strong>
+                          选项对象（options） 之 <code>style: 'currency'</code>{" "}
+                        </strong>
+                        : 表示数字将被格式化为货币形式。
+                      </li>
+                      <li>
+                        <strong>
+                          选项对象（options） 之 <code>currency: 'USD'</code>{" "}
+                        </strong>
+                        : 指定货币的种类为美元（USD）。这个选项在 style 设置为
+                        'currency' 时是必需的。
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    最后，我们使用 <code>currencyFormatter.format()</code>{" "}
+                    将计算出的金额格式化为美元货币格式。例如，如果
+                    monthlyPaymentAmount 是 1234.56，格式化后将显示为 $1,234.56{" "}
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </p>
+        </li>
       </ul>
     </div>
   );
@@ -278,6 +482,7 @@ function App() {
           path="/temperature-converter"
           element={<TemperatureConverter />}
         />
+        <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
       </Routes>
     </Router>
   );
