@@ -9,6 +9,7 @@ import CssAdjustment from "./practice/CssAdjustment";
 import ProgressBar from "./practice/ProgressBar";
 import TemperatureConverter from "./practice/TemperatureConverter";
 import MortgageCalculator from "./practice/MortgageCalculator";
+import TweetUI from "./practice/TweetUI";
 
 function Home() {
   return (
@@ -462,6 +463,35 @@ function Home() {
             </ol>
           </p>
         </li>
+
+        <li>
+          <Link to="/tweet-ui" className="li-title">
+            Tweet UI
+          </Link>
+          <p className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/tweet">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>对于子组件的传参，善用 {} 来传递参数</li>
+              <li>
+                UI 上对架构的了解，以及CSS， CSS要善用{" "}
+                <strong> CSS 自定义属性</strong>, 比如coding中的搭配{" "}
+                <code>--spacing: 12px; && var(--spacing);</code>.
+                特别是查看这一行代码<code> column-gap: var(--spacing);</code>{" "}
+                使得免掉了许多的
+                <code>display:flex; flex-direction: column;</code>
+              </li>
+              <li>
+                通过 <code>.toLocaleString()</code>{" "}
+                来规范化数字。但是这里需要注意的一点是，我们需要返回的是一个Number类型，而不是一个String类型的数字，所以我们用{" "}
+                <code>Number(number).toLocaleString();</code>
+                来达到最终效果{" "}
+              </li>
+            </ul>
+          </p>
+        </li>
       </ul>
     </div>
   );
@@ -483,6 +513,7 @@ function App() {
           element={<TemperatureConverter />}
         />
         <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
+        <Route path="/tweet-ui" element={<TweetUI />} />
       </Routes>
     </Router>
   );
