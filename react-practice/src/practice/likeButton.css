@@ -1,0 +1,41 @@
+.like-button-container {
+}
+
+.liked-button {
+  --default-color: #888;
+  --active-color: #f00;
+
+  align-items: center;
+  border-style: solid;
+  border-radius: 32px;
+  border-width: 2px;
+  display: flex;
+  cursor: pointer;
+  font-weight: bold;
+  gap: 8px;
+  height: 32px;
+  padding: 4px 8px;
+  margin: 5%;
+}
+
+.liked-button-default {
+  background-color: #fff;
+  border-color: var(--default-color);
+  color: var(--default-color);
+}
+
+.liked-button:hover {
+  border-color: var(--active-color);
+  color: var(--active-color);
+}
+
+.liked-button--liked,
+.liked-button--liked:hover {
+  background-color: var(--active-color);
+  border-color: var(--active-color);
+  color: #fff;
+}
+
+.like-button-error-message {
+  display: flex;
+}

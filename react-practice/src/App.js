@@ -14,6 +14,7 @@ import Tabs from "./practice/Tabs";
 import AnalogClock from "./practice/AnalogClock";
 import DigitalClock from "./practice/DigitalClock";
 import GridLight from "./practice/GridLight";
+import LikeButton from "./practice/LikeButton";
 
 function Home() {
   return (
@@ -719,6 +720,25 @@ function Home() {
             </ul>
           </div>
         </li>
+
+        <li>
+          <Link to="/like-button" className="li-title">
+            Like Button Various States
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/like-button">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+           <ul>
+            <li>useState 对 state/状态的管理</li>
+            <li>对于同一个组件，在不同状态下的 状态管理，icon修改，css，className命名</li>
+            <li>async function 和 try...catch...finally... 语法， (比较固定的)errorMessage的处理</li>
+            <li>调用API的语法</li>
+           </ul>
+            
+          </div>
+        </li>
       </ol>
     </div>
   );
@@ -745,6 +765,7 @@ function App() {
         <Route path="/analog-clock" element={<AnalogClock />} />
         <Route path="/digital-clock" element={<DigitalClock />} />
         <Route path="/grid-light" element={<GridLight />} />
+        <Route path="/like-button" element={<LikeButton />} />
       </Routes>
     </Router>
   );
