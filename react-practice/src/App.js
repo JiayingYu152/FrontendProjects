@@ -12,6 +12,7 @@ import MortgageCalculator from "./practice/MortgageCalculator";
 import TweetUI from "./practice/TweetUI";
 import Tabs from "./practice/Tabs";
 import AnalogClock from "./practice/AnalogClock";
+import DigitalClock from "./practice/DigitalClock";
 
 function Home() {
   return (
@@ -570,16 +571,50 @@ function Home() {
                     </strong>
                     :当这些变换组合在一起时，元素会先旋转，然后按指定的比例在垂直和水平方向上缩放。
                   </li>
-            
                 </ul>
               </li>
-              <li><strong>setInterval() && clearInterval()</strong>:
-              <ul>
-                <li>setInterval 是一个原生 JavaScript 函数，用于设置一个定时器，每隔指定的时间（以毫秒为单位）执行一次函数. 在 Analog Clock中，我们设置了一个定时器，每100毫秒执行一次函数，更新 date 状态。</li>
-                <li>useEffect 返回的函数会在组件卸载时执行，这里用于清除定时器，防止内存泄漏。当组件卸载时，这个函数会调用 <code>window.clearInterval(timer)</code> 来停止定时器。</li>
-              </ul>
+              <li>
+                <strong>setInterval() && clearInterval()</strong>:
+                <ul>
+                  <li>
+                    setInterval 是一个原生 JavaScript
+                    函数，用于设置一个定时器，每隔指定的时间（以毫秒为单位）执行一次函数.
+                    在 Analog
+                    Clock中，我们设置了一个定时器，每100毫秒执行一次函数，更新
+                    date 状态。
+                  </li>
+                  <li>
+                    useEffect
+                    返回的函数会在组件卸载时执行，这里用于清除定时器，防止内存泄漏。当组件卸载时，这个函数会调用{" "}
+                    <code>window.clearInterval(timer)</code> 来停止定时器。
+                  </li>
+                </ul>
               </li>
             </ol>
+          </div>
+        </li>
+
+        <li>
+          <Link to="/digital-clock" className="li-title">
+            Digital Clock (Easier than Analog Clock, Same Logic and
+            Implementation)
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/digital-clock">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>hook: useState && useEffect</li>
+              <li>
+                useCurrentDate 自定义hook。HINT：原本用 updateCurrentTime
+                来自定义这个名字，是有问题的。因为 hook 必须以use 开头命名。{" "}
+              </li>
+              <li>
+                拆分component，不同function
+                component负责不同的功能，来提高代码阅读量
+              </li>
+            </ul>
           </div>
         </li>
       </ol>
@@ -606,6 +641,7 @@ function App() {
         <Route path="/tweet-ui" element={<TweetUI />} />
         <Route path="/tabs" element={<Tabs />} />
         <Route path="/analog-clock" element={<AnalogClock />} />
+        <Route path="/digital-clock" element={<DigitalClock />} />
       </Routes>
     </Router>
   );
