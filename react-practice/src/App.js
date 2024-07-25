@@ -21,7 +21,7 @@ function Home() {
           <Link to="/contact-form" className="li-title">
             Contact Form Practice
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/contact-form/v/c2f1019c-a3dc-4ec4-bf4a-5373d8c31357">
               Link
             </a>
@@ -32,14 +32,14 @@ function Home() {
               <li>hook: useState: 提交form后清空input框</li>
               <li>css选择器优先级</li>
             </ul>
-          </p>
+          </div>
         </li>
 
         <li>
           <Link to="/accordion" className="li-title">
             Accordion / Folding Div Practice
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/accordion">
               Link
             </a>
@@ -53,14 +53,14 @@ function Home() {
               <li>psudo-element / classes: :hover, :not(:first-child)</li>
               <li>在未知高度中，如何让元素横向&纵向居中，方法二</li>
             </ul>
-          </p>
+          </div>
         </li>
 
         <li>
           <Link to="./flight-booker" className="li-title">
             Flight Booker Practice
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/flight-booker">
               Link
             </a>
@@ -81,14 +81,14 @@ function Home() {
                 (对于表单提交事件，浏览器的默认行为是发送表单数据到服务器并重新加载页面。)
               </li>
             </ul>
-          </p>
+          </div>
         </li>
 
         <li>
           <Link to="/generate-table" className="li-title">
             Generate Table Practice{" "}
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/generate-table">
               Link
             </a>
@@ -106,14 +106,14 @@ function Home() {
               </li>
               <li>难点/算法：蛇形遍历2d array</li>
             </ul>
-          </p>
+          </div>
         </li>
 
         <li>
           <Link to="/css-Adjustment" className="li-title">
             CSS Adjustment
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/holy-grail">
               Link
             </a>
@@ -151,14 +151,14 @@ function Home() {
                 </ul>
               </li>
             </ul>
-          </p>
+          </div>
         </li>
 
         <li>
           <Link to="/progress-bar" className="li-title">
             CSS Adjustment
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/progress-bar">
               Link
             </a>
@@ -252,14 +252,14 @@ function Home() {
                 page、step、location、date、time 或 true。
               </li>
             </ul>
-          </p>
+          </div>
         </li>
 
         <li>
           <Link to="./temperature-converter" className="li-title">
             Temperature Converter
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/temperature-converter">
               Link
             </a>
@@ -280,14 +280,14 @@ function Home() {
                 </ul>
               </li>
             </ul>
-          </p>
+          </div>
         </li>
 
         <li>
           <Link to="./mortgage-calculator" className="li-title">
             Mortgage Calculator
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/mortgage-calculator">
               Link
             </a>
@@ -462,14 +462,14 @@ function Home() {
                 </ul>
               </li>
             </ol>
-          </p>
+          </div>
         </li>
 
         <li>
           <Link to="/tweet-ui" className="li-title">
             Tweet UI
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/tweet">
               Link
             </a>
@@ -491,14 +491,14 @@ function Home() {
                 来达到最终效果{" "}
               </li>
             </ul>
-          </p>
+          </div>
         </li>
 
         <li>
           <Link to="/tabs" className="li-title">
             Tabs
           </Link>
-          <p className="important-paragraph">
+          <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/tabs">
               Link
             </a>
@@ -512,9 +512,9 @@ function Home() {
               <li>
                 通过 <code>map</code> 来映射传参
               </li>
-              <li>对不同状态下的 component 的className定义 -> CSS </li>
+              <li>对不同状态下的 component 的className定义 - CSS </li>
             </ul>
-          </p>
+          </div>
         </li>
       </ol>
     </div>
