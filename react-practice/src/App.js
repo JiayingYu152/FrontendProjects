@@ -13,6 +13,7 @@ import TweetUI from "./practice/TweetUI";
 import Tabs from "./practice/Tabs";
 import AnalogClock from "./practice/AnalogClock";
 import DigitalClock from "./practice/DigitalClock";
+import GridLight from "./practice/GridLight";
 
 function Home() {
   return (
@@ -617,6 +618,107 @@ function Home() {
             </ul>
           </div>
         </li>
+
+        <li>
+          <Link to="/grid-light" className="li-title">
+            Grid Light
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/grid-lights">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>
+                CSS: 对 grid-template-columns 的使用.
+                这个属性用于定义每列的宽度。{" "}
+              </li>
+              <li>
+                <code>repeat(...)</code>: 这是 CSS 中的 repeat
+                函数，简化了重复声明列宽的工作。语法是{" "}
+                <code>repeat(count, value)</code>: count: 指定重复次数; value:
+                指定每次重复的值。
+              </li>
+              <li>
+                在这个例子中： dollar sign 后面的这一串 是 JavaScript
+                模板字符串语法，它会插入 config[0].length 的值，即 config
+                数组第一行的长度（列数）。 而 <code>1fr</code> 是一个 CSS
+                单位，表示一份可用的网格空间。fr 是 fraction
+                的缩写，表示网格容器可用空间的一个比例单位。
+              </li>
+              <li>
+                对 <code>Array.prototype.flat()</code>
+                方法用于按照指定的深度递归地将数组展开，并返回一个新数组。flat(1)
+                表示将数组展开一层。
+              </li>
+              <li>
+                <code>filter(Boolean)</code>{" "}
+                是一种常见的技巧，用于过滤数组中的假值。Boolean 是 JavaScript
+                中的一个全局对象，可以用作函数来将值转换为布尔值。它会将所有“假值”转换为
+                false，并将所有“真值”转换为 true。
+              </li>
+            </ul>
+            <h4>补充学习：map</h4>
+            <ul>
+              <li>
+                <strong>
+                  <code>map</code>
+                </strong>{" "}
+                是一个非常有用的数组方法，用于<strong>遍历数组</strong>
+                并对每个元素执行一个函数，然后返回一个新的数组，其中包含每次函数调用的结果。
+              </li>
+              <li>
+                <strong>语法</strong>:{" "}
+                <code>
+                  array.map(callback(currentValue, index, array), thisArg)
+                </code>{" "}
+                <ul>
+                  <li>
+                    <strong>
+                      <code>callback</code>
+                    </strong>
+                    : 一个函数，它会为数组中的每个元素执行。它接收三个参数：
+                  </li>
+                  <li>
+                    <strong>
+                      <code> currentValue</code>
+                    </strong>
+                    : 当前处理的元素。
+                  </li>
+                  <li>
+                    <strong>
+                      <code> index</code>
+                    </strong>
+                    (optional): 当前处理元素的索引。
+                  </li>
+                  <li>
+                    <strong>
+                      <code> array</code>
+                    </strong>
+                    (optional): 调用 map 方法的数组本身。
+                  </li>
+                  <li>
+                    <strong>
+                      <code> thisArg</code>
+                    </strong>
+                    (optional): 执行 callback 时用于 this 的值。
+                  </li>
+                </ul>
+              </li>
+              <li>
+                基本示例: map 方法遍历 numbers
+                数组中的每个元素，并将每个元素乘以2，结果是一个新数组 [2, 4, 6,
+                8]。{" "}
+                <code>
+                  const numbers = [1, 2, 3, 4]; const doubled =
+                  numbers.map(number =指向 number * 2); console.log(doubled); //
+                  输出: [2, 4, 6, 8]
+                </code>
+              </li>
+              <li>在 React 中，map 常用于遍历数组并返回 JSX 元素列表。</li>
+            </ul>
+          </div>
+        </li>
       </ol>
     </div>
   );
@@ -642,6 +744,7 @@ function App() {
         <Route path="/tabs" element={<Tabs />} />
         <Route path="/analog-clock" element={<AnalogClock />} />
         <Route path="/digital-clock" element={<DigitalClock />} />
+        <Route path="/grid-light" element={<GridLight />} />
       </Routes>
     </Router>
   );
