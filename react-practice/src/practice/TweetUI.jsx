@@ -1,4 +1,5 @@
 import "./tweetUI.css";
+import { useNavigate } from "react-router-dom";
 
 const Tweet = ({
   profileImage,
@@ -65,8 +66,17 @@ const Tweet = ({
 };
 
 const TweetUI = () => {
+    const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
+
   return (
     <div className="tweet-ui-page-container">
+         <button
+        style={{ position: "absolute", top: 0, left: 0 }}
+        onClick={() => navigate("/")}
+      >
+        Going back to home page
+      </button>
+      
       <Tweet
         profileImage="https://xsgames.co/randomusers/avatar.php?g=male"
         name="John Doe"

@@ -45,6 +45,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: auto 5%;
 }
 /* 
   上面 可以用gap，但是必须要建立在有display:flex  基础上才可以用gap: 单独用gap不会work。

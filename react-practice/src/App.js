@@ -10,12 +10,13 @@ import ProgressBar from "./practice/ProgressBar";
 import TemperatureConverter from "./practice/TemperatureConverter";
 import MortgageCalculator from "./practice/MortgageCalculator";
 import TweetUI from "./practice/TweetUI";
+import Tabs from "./practice/Tabs";
 
 function Home() {
   return (
     <div>
       <h1 className="home-page-header">Welcome to React Practice</h1>
-      <ul className="home-page-ul-container">
+      <ol className="home-page-ul-container">
         <li>
           <Link to="/contact-form" className="li-title">
             Contact Form Practice
@@ -492,7 +493,30 @@ function Home() {
             </ul>
           </p>
         </li>
-      </ul>
+
+        <li>
+          <Link to="/tabs" className="li-title">
+            Tabs
+          </Link>
+          <p className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/tabs">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>对于子组件的传参，善用 {} 来传递参数</li>
+              <li>
+                在传递参数的时候一定要检查 从父组件传进来的参数不是
+                undefined的！！！ 一定要处理corner case 避免 NPE。
+              </li>
+              <li>
+                通过 <code>map</code> 来映射传参
+              </li>
+              <li>对不同状态下的 component 的className定义 -> CSS </li>
+            </ul>
+          </p>
+        </li>
+      </ol>
     </div>
   );
 }
@@ -514,6 +538,7 @@ function App() {
         />
         <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
         <Route path="/tweet-ui" element={<TweetUI />} />
+        <Route path="/tabs" element={<Tabs />} />
       </Routes>
     </Router>
   );
