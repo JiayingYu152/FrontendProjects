@@ -26,6 +26,7 @@ const FlightBooker = () => {
     formatDate(new Date(Date.now() + DAY_IN_SECONDS))
   );
   const [returnDate, setReturnDate] = useState(departureDate);
+  
   const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
 
   const handleSumbit = (event) => {

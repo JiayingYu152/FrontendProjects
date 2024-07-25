@@ -2,12 +2,12 @@ import "./generateTable.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const GenerateTable = () => {
-  const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
-
+const GenerateTable = () => {  
   const [rows, setRows] = useState();
   const [columns, setColumns] = useState();
   const [tableData, setTableData] = useState([]);
+
+  const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
 
   //   //simple traversing 2d array
   //   const formSubmit = (e) => {

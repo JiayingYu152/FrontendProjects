@@ -29,11 +29,11 @@ const Cell = ({ filled, label, isDisabled, onClick }) => {
   );
 };
 
-const GridLight = () => {
-  const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
-
+const GridLight = () => {  
   const [order, setOrder] = useState([]); //order 记录被激活的单元格索引。
   const [isDeactivating, setIsDeactivating] = useState(false); //指示是否在停用单元格。
+
+  const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
 
   const deactivateCells = () => { //每300毫秒停用一个单元格，直到所有单元格都被停用。
     setIsDeactivating(true);

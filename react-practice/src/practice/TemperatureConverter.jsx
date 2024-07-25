@@ -3,10 +3,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const TemperatureConverter = () => {
-    const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
-
   const [celsius, setCelsius] = useState("");
   const [fahrenheit, setFahrenheit] = useState("");
+
+  const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
 
   const handleCelsiusChange = (e) => {
     const value = e.target.value;
@@ -32,13 +32,13 @@ const TemperatureConverter = () => {
 
   return (
     <div className="temperature-converter-page-container">
-         <button
+      <button
         style={{ position: "absolute", top: 0, left: 0 }}
         onClick={() => navigate("/")}
       >
         Going back to home page
       </button>
-      
+
       <h1>Temperature Converter</h1>
       <form>
         <label>
