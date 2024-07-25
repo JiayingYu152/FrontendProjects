@@ -1,6 +1,8 @@
 .tabs-page-container {
   align-items: center;
   display: flex;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 .tabs-page-single-tab-container {
@@ -8,8 +10,8 @@
   flex-direction: column;
   gap: 8px;
   width: 70vw;
-  min-height: 100vh;
-  margin: 10%;
+  height: 90vh;
+  margin: 5%;
 }
 
 .tabs-page-tabs-list {
