@@ -11,6 +11,7 @@ import TemperatureConverter from "./practice/TemperatureConverter";
 import MortgageCalculator from "./practice/MortgageCalculator";
 import TweetUI from "./practice/TweetUI";
 import Tabs from "./practice/Tabs";
+import AnalogClock from "./practice/AnalogClock";
 
 function Home() {
   return (
@@ -516,6 +517,71 @@ function Home() {
             </ul>
           </div>
         </li>
+
+        <li>
+          <Link to="/analog-clock" className="li-title">
+            Analog Clock
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/analog-clock">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul></ul>
+            <h4>补充学习：</h4>
+            <ol>
+              <li>
+                CSS属性 之{" "}
+                <strong>
+                  <code>transform</code>
+                </strong>
+                <ul>
+                  <li>
+                    {" "}
+                    <code>transform</code>{" "}
+                    是一个CSS属性，用于对元素进行2D或3D转换，比如旋转、缩放、平移或倾斜。在这个代码中，transform
+                    属性被用来同时进行旋转和缩放。
+                  </li>
+                  <li>
+                    <code>rotate(...deg)</code>:
+                    定义了元素的旋转角度。旋转是围绕元素的中心点进行的。例如，rotate(90deg)
+                    会使元素顺时针旋转90度。
+                  </li>
+                  <li>
+                    <code>scaleY(...)</code>:
+                    定义了元素在垂直方向（Y轴）的缩放比例。scaleY(1)
+                    表示保持原始高度，scaleY(0.5)
+                    表示高度缩小为原来的一半，scaleY(2)
+                    则表示高度增加到原来的两倍。
+                  </li>
+                  <li>
+                    <code>scaleX(...)</code>:
+                    定义了元素在水平方向（X轴）的缩放比例。scaleX(1)
+                    表示保持原始宽度，scaleX(0.5)
+                    表示宽度缩小为原来的一半，scaleX(2)
+                    则表示宽度增加到原来的两倍。
+                  </li>
+                  <li>
+                    <strong>
+                      综合效果{" "}
+                      <code>
+                        transform: `rotate(...deg) scaleY(...) scaleX(...)`
+                      </code>
+                    </strong>
+                    :当这些变换组合在一起时，元素会先旋转，然后按指定的比例在垂直和水平方向上缩放。
+                  </li>
+            
+                </ul>
+              </li>
+              <li><strong>setInterval() && clearInterval()</strong>:
+              <ul>
+                <li>setInterval 是一个原生 JavaScript 函数，用于设置一个定时器，每隔指定的时间（以毫秒为单位）执行一次函数. 在 Analog Clock中，我们设置了一个定时器，每100毫秒执行一次函数，更新 date 状态。</li>
+                <li>useEffect 返回的函数会在组件卸载时执行，这里用于清除定时器，防止内存泄漏。当组件卸载时，这个函数会调用 <code>window.clearInterval(timer)</code> 来停止定时器。</li>
+              </ul>
+              </li>
+            </ol>
+          </div>
+        </li>
       </ol>
     </div>
   );
@@ -539,6 +605,7 @@ function App() {
         <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
         <Route path="/tweet-ui" element={<TweetUI />} />
         <Route path="/tabs" element={<Tabs />} />
+        <Route path="/analog-clock" element={<AnalogClock />} />
       </Routes>
     </Router>
   );
