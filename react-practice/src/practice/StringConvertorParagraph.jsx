@@ -1,7 +1,7 @@
 import React from "react";
 import parse from "html-react-parser";
 
-const StringConvertor = () => {
+const StringConvertorParagraph = () => {
   const message =
     "Please tag @Bob Jones for approval!\n\n" +
     "Here's the max amount we were allotted:\n\n" +
@@ -12,7 +12,7 @@ const StringConvertor = () => {
 
   const customParse = (text) => {
     //这行代码将所有换行符 (\n) 替换为 HTML 的 <br /> 标签，以保持文本的格式。
-    let formattedText = text.replace(/\n/g, "<br />"); 
+    let formattedText = text.replace(/\n/g, "<br />");
 
     // 处理引用块
     formattedText = formattedText.replace(
@@ -48,4 +48,4 @@ const StringConvertor = () => {
   );
 };
 
-export default StringConvertor;
+export default StringConvertorParagraph;

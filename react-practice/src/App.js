@@ -16,7 +16,7 @@ import DigitalClock from "./practice/DigitalClock";
 import GridLight from "./practice/GridLight";
 import LikeButton from "./practice/LikeButton";
 import ProgressBarII from "./practice/ProgressBarII";
-import StringConvertor from "./practice/StringConvertor";
+import StringConvertorParagraph from "./practice/StringConvertorParagraph";
 
 function Home() {
   return (
@@ -761,7 +761,7 @@ function Home() {
         </li>
 
         <li>
-          <Link to="/string-convertor" className="li-title">
+          <Link to="/string-convertor-paragraph" className="li-title">
             String Convertor
           </Link>
           <div className="important-paragraph">
@@ -797,7 +797,10 @@ function App() {
         <Route path="/grid-light" element={<GridLight />} />
         <Route path="/like-button" element={<LikeButton />} />
         <Route path="/progress-bar-ii" element={<ProgressBarII />} />
-        <Route path="/string-convertor" element={<StringConvertor />} />
+        <Route
+          path="/string-convertor-paragraph"
+          element={<StringConvertorParagraph />}
+        />
       </Routes>
     </Router>
   );
