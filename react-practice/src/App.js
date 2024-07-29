@@ -15,6 +15,8 @@ import AnalogClock from "./practice/AnalogClock";
 import DigitalClock from "./practice/DigitalClock";
 import GridLight from "./practice/GridLight";
 import LikeButton from "./practice/LikeButton";
+import ProgressBarII from "./practice/ProgressBarII";
+import StringConvertor from "./practice/StringConvertor";
 
 function Home() {
   return (
@@ -730,13 +732,41 @@ function Home() {
               Link
             </a>
             <h3>考点/内容点:</h3>
-           <ul>
-            <li>useState 对 state/状态的管理</li>
-            <li>对于同一个组件，在不同状态下的 状态管理，icon修改，css，className命名</li>
-            <li>async function 和 try...catch...finally... 语法， (比较固定的)errorMessage的处理</li>
-            <li>调用API的语法</li>
-           </ul>
-            
+            <ul>
+              <li>useState 对 state/状态的管理</li>
+              <li>
+                对于同一个组件，在不同状态下的
+                状态管理，icon修改，css，className命名
+              </li>
+              <li>
+                async function 和 try...catch...finally... 语法，
+                (比较固定的)errorMessage的处理
+              </li>
+              <li>调用API的语法</li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <Link to="/progress-bar-ii" className="li-title">
+            Progress Bar II (With Action Button)
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/progress-bars-ii">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul></ul>
+          </div>
+        </li>
+
+        <li>
+          <Link to="/string-convertor" className="li-title">
+            String Convertor
+          </Link>
+          <div className="important-paragraph">
+            <h3>考点/内容点:</h3>
+            <ul></ul>
           </div>
         </li>
       </ol>
@@ -766,6 +796,8 @@ function App() {
         <Route path="/digital-clock" element={<DigitalClock />} />
         <Route path="/grid-light" element={<GridLight />} />
         <Route path="/like-button" element={<LikeButton />} />
+        <Route path="/progress-bar-ii" element={<ProgressBarII />} />
+        <Route path="/string-convertor" element={<StringConvertor />} />
       </Routes>
     </Router>
   );
