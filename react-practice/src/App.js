@@ -20,6 +20,7 @@ import StringConvertorParagraph from "./practice/StringConvertorParagraph";
 import StarRating from "./practice/StarRating";
 import ToDoList from "./practice/ToDoList";
 import TicTacToe from "./practice/TicTacToe";
+import FetchJobBoard from "./practice/FetchJobBoard";
 
 function Home() {
   return (
@@ -778,6 +779,9 @@ function Home() {
             Star Rating
           </Link>
           <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/star-rating">
+              Link
+            </a>
             <h3>考点/内容点:</h3>
             <ul></ul>
           </div>
@@ -788,6 +792,9 @@ function Home() {
             To Do List
           </Link>
           <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/todo-list">
+              Link
+            </a>
             <h3>考点/内容点:</h3>
             <ul></ul>
           </div>
@@ -798,8 +805,92 @@ function Home() {
             Tic Tac Toe
           </Link>
           <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/tic-tac-toe">
+              Link
+            </a>
             <h3>考点/内容点:</h3>
             <ul></ul>
+          </div>
+        </li>
+
+        <li>
+          <Link to="/fetch-job-board" className="li-title">
+            Fetch Job Board
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/job-board">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>Fetch API的implementation，记得要async function！！！ </li>
+              <li> & middot; : 表示一个 dot </li>
+              <li>
+                {" "}
+                <code>new Date(time * 1000).toLocaleString()</code>:
+                显示发布者和发布时间（转换为本地时间格式）
+              </li>
+            </ul>
+            <h4>补充学习: BEM(Block, Element, Modifier) 命名规范</h4>
+            <ul>
+              <li>
+                BEM（Block, Element, Modifier）是一种 CSS
+                命名约定，用于创建可复用的组件和代码共享。它的基本思想是将页面的
+                UI
+                分为独立的模块（Block），并用元素（Element）和修饰符（Modifier）来描述模块内部的组成部分及其状态。
+              </li>
+              <li>
+                BEM 命名规范的基本形式是：{" "}
+                <ul>
+                  <li>
+                    Block:{" "}
+                    <strong>
+                      <code>block-name</code>
+                    </strong>
+                    . e.g. Block:{" "}
+                    <strong>
+                      <code>fetch-job-board-post</code>
+                    </strong>
+                    : 这是一个独立的 UI 模块，代表一个职位发布条目。
+                  </li>
+                  <li>
+                    Element:{" "}
+                    <strong>
+                      <code>block-name__element-name</code>
+                    </strong>
+                    . e.g. Element:{" "}
+                    <strong>
+                      <code>fetch-job-board-post__title</code>
+                    </strong>
+                    : fetch-job-board-post__title 是 fetch-job-board-post
+                    模块中的一个元素，表示职位发布条目中的标题。
+                  </li>
+                  <li>
+                    Modifier:{" "}
+                    <strong>
+                      <code>block-name--modifier-name</code>
+                    </strong>
+                    .
+                  </li>
+                </ul>
+              </li>
+              <li>
+                使用 BEM 命名规范的主要好处有：
+                <ul>
+                  <li>
+                    清晰的结构：通过命名可以清晰地看到一个元素属于哪个模块，提高代码的可读性。
+                  </li>
+                  <li>
+                    可维护性：CSS
+                    类名之间没有冲突，不同模块之间的样式不会相互影响，易于维护和扩展。
+                  </li>
+                  <li>
+                    模块化：每个 Block
+                    可以独立开发和测试，然后组合成复杂的页面，增强代码的复用性。
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </li>
       </ol>
@@ -837,6 +928,7 @@ function App() {
         <Route path="/star-rating" element={<StarRating />} />
         <Route path="/to-do-list" element={<ToDoList />} />
         <Route path="/tic-tac-toe" element={<TicTacToe />} />
+        <Route path="/fetch-job-board" element={<FetchJobBoard />} />
       </Routes>
     </Router>
   );
