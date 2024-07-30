@@ -6,8 +6,7 @@ const DEFAULT_ITEMS_LEFT = ["HTML", "JavaScript", "CSS", "TypeScript"];
 const DEFAULT_ITEMS_RIGHT = ["React", "Angular", "Vue", "Svelte"];
 
 function CheckboxItem({ onChange, label, checked }) {
-  // Let React generate a unique ID for each item so as to maximize
-  // reusability of the component.
+  // Let React generate a unique ID for each item so as to maximize reusability of the component.
   const id = useId();
 
   return (

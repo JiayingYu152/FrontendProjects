@@ -23,6 +23,7 @@ import TicTacToe from "./practice/TicTacToe";
 import FetchJobBoard from "./practice/FetchJobBoard";
 import Stopwatch from "./practice/Stopwatch";
 import TransferList from "./practice/TransferList";
+import UndoableCounter from "./practice/UndoableCounter";
 
 function Home() {
   return (
@@ -1001,6 +1002,19 @@ function Home() {
             </ul>
           </div>
         </li>
+
+        <li>
+          <Link to="/undoable-counter" className="li-title">
+          Undoable Counter
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/undoable-counter">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul></ul>
+          </div>
+        </li>
       </ol>
     </div>
   );
@@ -1039,6 +1053,7 @@ function App() {
         <Route path="/fetch-job-board" element={<FetchJobBoard />} />
         <Route path="/stopwatch" element={<Stopwatch />} />
         <Route path="/transfer-list" element={<TransferList />} />
+        <Route path="/undoable-counter" element={<UndoableCounter />} />
       </Routes>
     </Router>
   );
