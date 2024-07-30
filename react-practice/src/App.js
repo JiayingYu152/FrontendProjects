@@ -24,6 +24,7 @@ import FetchJobBoard from "./practice/FetchJobBoard";
 import Stopwatch from "./practice/Stopwatch";
 import TransferList from "./practice/TransferList";
 import UndoableCounter from "./practice/UndoableCounter";
+import WhackAMole from "./practice/WhackAMole";
 
 function Home() {
   return (
@@ -1005,7 +1006,7 @@ function Home() {
 
         <li>
           <Link to="/undoable-counter" className="li-title">
-          Undoable Counter
+            Undoable Counter
           </Link>
           <div className="important-paragraph">
             <a href="https://www.greatfrontend.com/questions/user-interface/undoable-counter">
@@ -1013,6 +1014,22 @@ function Home() {
             </a>
             <h3>考点/内容点:</h3>
             <ul></ul>
+          </div>
+        </li>
+
+        <li>
+          <Link to="/whack-a-mole" className="li-title">
+            Whack A Mole 打地鼠游戏
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/whack-a-mole">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>使用 Fisher-Yates shuffle 洗牌算法， 随机打乱数组顺序。</li>
+              <li>重制函数记得考虑到所有声明过的变量， 并且清空 <code>clearInterval()</code>。</li>
+            </ul>
           </div>
         </li>
       </ol>
@@ -1054,6 +1071,7 @@ function App() {
         <Route path="/stopwatch" element={<Stopwatch />} />
         <Route path="/transfer-list" element={<TransferList />} />
         <Route path="/undoable-counter" element={<UndoableCounter />} />
+        <Route path="/whack-a-mole" element={<WhackAMole />} />
       </Routes>
     </Router>
   );
