@@ -17,6 +17,7 @@ import GridLight from "./practice/GridLight";
 import LikeButton from "./practice/LikeButton";
 import ProgressBarII from "./practice/ProgressBarII";
 import StringConvertorParagraph from "./practice/StringConvertorParagraph";
+import StarRating from "./practice/StarRating";
 
 function Home() {
   return (
@@ -769,6 +770,16 @@ function Home() {
             <ul></ul>
           </div>
         </li>
+
+        <li>
+          <Link to="/star-rating" className="li-title">
+            Star Rating
+          </Link>
+          <div className="important-paragraph">
+            <h3>考点/内容点:</h3>
+            <ul></ul>
+          </div>
+        </li>
       </ol>
     </div>
   );
@@ -801,6 +812,7 @@ function App() {
           path="/string-convertor-paragraph"
           element={<StringConvertorParagraph />}
         />
+        <Route path="/star-rating" element={<StarRating />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,16 @@
+.star-rating-container {
+  width: 90vw;
+  min-height: 100vh;
+  margin: 10%;
+}
+.star-icon {
+  --icon-size: 46px;
+
+  cursor: pointer;
+  height: var(--icon-size);
+  width: var(--icon-size);
+}
+
+.star-icon-filled {
+  fill: yellow;
+}

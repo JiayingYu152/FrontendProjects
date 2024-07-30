@@ -1,5 +1,6 @@
 import React from "react";
 import parse from "html-react-parser";
+import { useNavigate } from "react-router-dom";
 
 // 处理 Markdown 转换
 const convertMarkdown = (markdownMessage) => {
@@ -75,6 +76,8 @@ const convertChatApplication = (chatMessage) => {
 };
 
 const StringConvertorParagraph = () => {
+  const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
+
   const markdownMessage =
     "Please tag @Bob Jones for approval!\n\n" +
     "Here's the max amount we were allotted:\n\n" +
@@ -97,6 +100,13 @@ const StringConvertorParagraph = () => {
 
   return (
     <div>
+      <button
+        style={{ position: "absolute", top: 0, left: 0 }}
+        onClick={() => navigate("/")}
+      >
+        Going back to home page
+      </button>
+
       <h1>String Convertor Paragraph</h1>
 
       <h2>Markdown Convertor</h2>
