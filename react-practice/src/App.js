@@ -21,6 +21,7 @@ import StarRating from "./practice/StarRating";
 import ToDoList from "./practice/ToDoList";
 import TicTacToe from "./practice/TicTacToe";
 import FetchJobBoard from "./practice/FetchJobBoard";
+import Stopwatch from "./practice/Stopwatch";
 
 function Home() {
   return (
@@ -893,6 +894,75 @@ function Home() {
             </ul>
           </div>
         </li>
+
+        <li>
+          <Link to="/stopwatch" className="li-title">
+            Stopwatch
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/stopwatch">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>
+                Hook的使用：通过 useRef 存储上一次计时的时间戳，useState
+                管理总时间和计时器 ID
+              </li>
+            </ul>
+
+            <h4>
+              <code>Math.floor()</code>
+            </h4>
+            <ul>
+              <li>
+                <code>Math.floor()</code>: 是 JavaScript
+                中的一个内置函数，它用于向下取整一个数字。具体来说，它会返回小于或等于给定数字的最大整数。这个函数在处理浮点数时非常有用，尤其是在需要舍弃小数部分的情况下。
+                <li>
+                  示例：{" "}
+                  <ol>
+                    <li>e.g. Math.floor(4.7); // 返回 4</li>
+                    <li>e.g. Math.floor(4.4); // 返回 4</li>
+                    <li>e.g. Math.floor(-4.7); // 返回 -5</li>
+                    <li>e.g. Math.floor(-4.4); // 返回 -5</li>
+                  </ol>
+                </li>
+                <li>
+                  使用场景:{" "}
+                  <ol>
+                    <li>
+                      时间格式化：在秒表或计时器应用中，Math.floor
+                      常用于将时间单位（如毫秒）转换为较大单位（如秒、分钟、小时）时，确保向下取整，以免出现超过预期的时间显示。例如，在秒表代码中的使用：
+                      <code>
+                        const seconds = Math.floor(time / 1000); //
+                        将毫秒转换为秒并向下取整
+                      </code>
+                    </li>
+
+                    <li>
+                      分页计算：在处理分页功能时，Math.floor
+                      可以用来计算总页数，以确保即使总项数不是每页项数的整数倍，也不会多出一页。例如，{" "}
+                      <code>
+                        const itemsPerPage = 10; const totalItems = 105; const
+                        totalPages = Math.floor(totalItems / itemsPerPage); //
+                        返回 10 页
+                      </code>
+                    </li>
+
+                    <li>
+                      坐标计算：在计算图形或游戏中的坐标时，Math.floor
+                      可用于确保坐标值是整数，从而避免精度问题。例如，
+                      <code>
+                        const x = Math.floor(position.x); const y =
+                        Math.floor(position.y);
+                      </code>
+                    </li>
+                  </ol>
+                </li>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ol>
     </div>
   );
@@ -929,6 +999,7 @@ function App() {
         <Route path="/to-do-list" element={<ToDoList />} />
         <Route path="/tic-tac-toe" element={<TicTacToe />} />
         <Route path="/fetch-job-board" element={<FetchJobBoard />} />
+        <Route path="/stopwatch" element={<Stopwatch />} />
       </Routes>
     </Router>
   );

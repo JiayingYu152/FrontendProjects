@@ -12,4 +12,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+    background-color: rgb(224, 224, 224);
+    padding: 5px 10px;
+    border-radius: 4px;
 }
