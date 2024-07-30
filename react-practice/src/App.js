@@ -22,6 +22,7 @@ import ToDoList from "./practice/ToDoList";
 import TicTacToe from "./practice/TicTacToe";
 import FetchJobBoard from "./practice/FetchJobBoard";
 import Stopwatch from "./practice/Stopwatch";
+import TransferList from "./practice/TransferList";
 
 function Home() {
   return (
@@ -912,7 +913,7 @@ function Home() {
             </ul>
 
             <h4>
-              <code>Math.floor()</code>
+              补充学习: <code>Math.floor()</code>
             </h4>
             <ul>
               <li>
@@ -963,6 +964,43 @@ function Home() {
             </ul>
           </div>
         </li>
+
+        <li>
+          <Link to="/transfer-list" className="li-title">
+            Transfer List
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/transfer-list">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul></ul>
+
+            <h4>
+              补充学习: <code>useId()</code>
+            </h4>
+            <ul>
+              <li>
+                <code>useId</code> 是 React 18 中引入的一个新的
+                Hook，它用于生成稳定的唯一
+                ID。这在需要为多个组件生成唯一标识符时特别有用，例如在表单元素中需要关联{" "}
+                <code>"label"</code> 和 <code>"input"</code>{" "}
+                元素，或者在列表中为每个项目生成唯一的 key 值。{" "}
+                <code>useId</code> 能保证在整个组件生命周期内 ID 的稳定性。
+              </li>
+              <li>
+                <code>useId</code>{" "}
+                的用法非常简单，它不需要任何参数，调用它会返回一个唯一的 ID
+                字符串。e.g. useId 会返回一个唯一的 ID。这个 ID 被用于 label 的
+                htmlFor 属性和 input 的 id 属性，从而将标签和输入框关联起来。
+              </li>
+              <li>
+                示例 2：在列表中使用 useId.
+                假设我们有一个需要渲染的列表组件，每个列表项都需要一个唯一的 ID.{" "}
+              </li>
+            </ul>
+          </div>
+        </li>
       </ol>
     </div>
   );
@@ -1000,6 +1038,7 @@ function App() {
         <Route path="/tic-tac-toe" element={<TicTacToe />} />
         <Route path="/fetch-job-board" element={<FetchJobBoard />} />
         <Route path="/stopwatch" element={<Stopwatch />} />
+        <Route path="/transfer-list" element={<TransferList />} />
       </Routes>
     </Router>
   );
