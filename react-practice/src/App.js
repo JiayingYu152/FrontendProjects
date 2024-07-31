@@ -25,6 +25,7 @@ import Stopwatch from "./practice/Stopwatch";
 import TransferList from "./practice/TransferList";
 import UndoableCounter from "./practice/UndoableCounter";
 import WhackAMole from "./practice/WhackAMole";
+import MemoryGame from "./practice/MemoryGame";
 
 function Home() {
   return (
@@ -1028,8 +1029,24 @@ function Home() {
             <h3>考点/内容点:</h3>
             <ul>
               <li>使用 Fisher-Yates shuffle 洗牌算法， 随机打乱数组顺序。</li>
-              <li>重制函数记得考虑到所有声明过的变量， 并且清空 <code>clearInterval()</code>。</li>
+              <li>
+                重制函数记得考虑到所有声明过的变量， 并且清空{" "}
+                <code>clearInterval()</code>。
+              </li>
             </ul>
+          </div>
+        </li>
+
+        <li>
+          <Link to="/memory-game" className="li-title">
+            Memory Game
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/memory-game">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul></ul>
           </div>
         </li>
       </ol>
@@ -1072,6 +1089,7 @@ function App() {
         <Route path="/transfer-list" element={<TransferList />} />
         <Route path="/undoable-counter" element={<UndoableCounter />} />
         <Route path="/whack-a-mole" element={<WhackAMole />} />
+        <Route path="/memory-game" element={<MemoryGame />} />
       </Routes>
     </Router>
   );

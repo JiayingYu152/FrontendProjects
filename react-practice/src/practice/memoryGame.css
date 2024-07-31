@@ -1,0 +1,40 @@
+.memory-game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.memory-game-grid {
+  --size: 60px;
+
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.memory-game-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: #eee;
+  overflow: hidden;
+  position: relative;
+}
+
+.memory-game-card:disabled {
+  color: #000;
+}
+
+.memory-game-card--revealed {
+  background: transparent;
+  border-color: transparent;
+}
