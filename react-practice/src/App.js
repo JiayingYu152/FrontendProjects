@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import "./App.css";
 import ContactForm from "./practice/ContactForm";
@@ -29,6 +29,16 @@ import MemoryGame from "./practice/MemoryGame";
 import TrafficLight from "./practice/TrafficLight";
 
 function Home() {
+  const sectionRef = useRef(null);
+
+  const handleClickToLink = (targetId) => (e) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="home-page-container">
       <h1 className="home-page-header">Welcome to React Practice</h1>
@@ -211,14 +221,285 @@ function Home() {
           </ul>
         </li>
 
-        <li><strong>CSS 之 <code>display: inline-block</code></strong>: <ul>
-          <li><strong>特点1: 行内排列</strong>：元素不会独占一行，可以与其他行内或行内块级元素并排显示。</li>
-          <li><strong>特点2: 块级特性</strong>：可以设置宽度、高度、内边距、边框和外边距。</li>
-          <li><strong>使用场景1: 对齐元素</strong>: 在同一行中对齐多个元素，并且希望能够控制这些元素的宽高和内外边距。</li>
-          <li><strong>使用场景2: 按钮或链接</strong>: 需要多个按钮或链接并排显示，并且希望能够设置它们的宽度和高度。</li>
-          <li><strong>使用场景3: 表单元素(Contact Form Case 之 label处)</strong>: 在表单布局中，通常需要对齐标签和输入框，并且希望能够控制标签和输入框的宽高。In this case, 通过设置 label 的固定宽度，可以保证所有 label 的对齐更加整齐和一致，从而改善表单的布局和可读性。</li>
-          <li><strong>使用场景4: 导航栏</strong>: 在导航栏中对齐多个导航链接，并希望能够控制每个链接的宽高和内外边距。</li>
-          </ul></li>
+        <li>
+          <strong>
+            CSS 之 <code>display: inline-block</code>
+          </strong>
+          :{" "}
+          <ul>
+            <li>
+              <strong>特点1: 行内排列</strong>
+              ：元素不会独占一行，可以与其他行内或行内块级元素并排显示。
+            </li>
+            <li>
+              <strong>特点2: 块级特性</strong>
+              ：可以设置宽度、高度、内边距、边框和外边距。
+            </li>
+            <li>
+              <strong>使用场景1: 对齐元素</strong>:
+              在同一行中对齐多个元素，并且希望能够控制这些元素的宽高和内外边距。
+            </li>
+            <li>
+              <strong>使用场景2: 按钮或链接</strong>:
+              需要多个按钮或链接并排显示，并且希望能够设置它们的宽度和高度。
+            </li>
+            <li>
+              <strong>使用场景3: 表单元素(Contact Form Case 之 label处)</strong>
+              :
+              在表单布局中，通常需要对齐标签和输入框，并且希望能够控制标签和输入框的宽高。In
+              this case, 通过设置 label 的固定宽度，可以保证所有 label
+              的对齐更加整齐和一致，从而改善表单的布局和可读性。
+            </li>
+            <li>
+              <strong>使用场景4: 导航栏</strong>:
+              在导航栏中对齐多个导航链接，并希望能够控制每个链接的宽高和内外边距。
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          关于<strong>时间</strong>的内容：{" "}
+          <strong>
+            <code>Date</code>对象
+          </strong>{" "}
+          <ul>
+            <li>
+              关于时间的cases：{" "}
+              <a
+                href="#digital-clock-link"
+                onClick={handleClickToLink("digital-clock-link")}
+              >
+                Digital Clock
+              </a>{" "}
+              ,{" "}
+              <a
+                href="#analog-clock-link"
+                onClick={handleClickToLink("analog-clock-link")}
+              >
+                Analog Clock
+              </a>
+              ,{" "}
+              <a
+                href="#flight-booker-link"
+                onClick={handleClickToLink("flight-booker-link")}
+              >
+                Flight Booker
+              </a>
+              ,
+              <a
+                href="#stopwatch-link"
+                onClick={handleClickToLink("stopwatch-link")}
+              >
+                Stopwatch
+              </a>
+              。 看具体例子来学习更多关于时间的知识。
+            </li>
+            <li>
+              JavaScript 的 Date
+              对象是一个内置对象，用于处理日期和时间。它提供了丰富的方法来操作和格式化日期和时间。
+            </li>
+            <li>
+              <strong>创建 Date 对象</strong>:{" "}
+              <ol>
+                <li>
+                  当前日期和时间: <code>const now = now Date();</code>
+                </li>
+                <li>
+                  指定日期和时间（月份从0开始，0表示1月）:{" "}
+                  <code>
+                    const specificDate = new Date(2024, 6, 29, 10, 30, 0); //
+                    2024年7月29日 10:30:00
+                  </code>
+                </li>
+                <li>
+                  从时间戳（1970年1月1日 00:00:00 UTC之后的毫秒数）创建:{" "}
+                  <code>const fromTimestamp = new Date(1627545600000);</code>
+                </li>
+                <li>
+                  从字符串创建:{" "}
+                  <code>
+                    const fromString = new Date('2024-07-29T10:30:00');
+                  </code>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <strong>获取日期和时间的方法:</strong>{" "}
+              <ol>
+                <li>
+                  定义"时间"： <code>const nowTime = new Date();</code>
+                </li>
+                <li>
+                  获取完整的年份:{" "}
+                  <code>const year = nowTime.getFullYear(); // 2024</code>
+                </li>
+                <li>
+                  获取月份（0-11）:{" "}
+                  <code>const month = nowTime.getMonth(); // 6（表示7月）</code>
+                </li>
+                <li>
+                  获取月中的第几天（1-31）:{" "}
+                  <code>const day = nowTime.getDate(); // 29</code>
+                </li>
+                <li>
+                  获取星期几（0-6，0表示星期天）:{" "}
+                  <code>
+                    const weekday = nowTime.getDay(); // 1（表示星期一）
+                  </code>
+                </li>
+                <li>
+                  获取小时（0-23）:{" "}
+                  <code>const hours = nowTime.getHours(); // 10</code>
+                </li>
+                <li>
+                  获取分钟（0-59）:{" "}
+                  <code>const minutes = nowTime.getMinutes(); // 30</code>
+                </li>
+                <li>
+                  获取秒（0-59）:{" "}
+                  <code>const seconds = nowTime.getSeconds(); // 0</code>
+                </li>
+                <li>
+                  获取毫秒（0-999）:{" "}
+                  <code>
+                    const milliseconds = nowTime.getMilliseconds(); // 0
+                  </code>
+                </li>
+                <li>
+                  获取从1970年1月1日 00:00:00 UTC起的毫秒数:{" "}
+                  <code>
+                    const timestamp = nowTime.getTime(); // 1627545600000
+                  </code>
+                </li>
+              </ol>
+            </li>
+            <li>
+              设置日期和时间的方法: 将上面的API中的<code>get</code>改成
+              <code>set</code>即可，比如说,{" "}
+              <code>nowTime.setFullYear(2025);</code> &&{" "}
+              <code>nowTime.setMonth(11); // 12月</code>
+            </li>
+            <li>
+              <strong>格式化日期和时间</strong>:
+              (继续沿用前面已经定义了的nowTime)
+              <ol>
+                <li>
+                  使用本地格式化日期：
+                  <code>
+                    const localeDate = nowTime.toLocaleDateString(); // 例如
+                    "7/29/2024"
+                  </code>
+                </li>
+                <li>
+                  使用本地格式化时间
+                  <code>
+                    const localeTime = nowTime.toLocaleTimeString(); // 例如
+                    "10:30:00 AM"
+                  </code>
+                </li>
+                <li>
+                  使用指定语言和选项格式化日期
+                  <code>
+                    const formattedDate = nowTime.toLocaleDateString('en-US',
+                    花括号_year 冒号 单引号numeric单引号, month 冒号
+                    单引号long单引号, day 冒号 单引号numeric单引号 _花括号); //
+                    例如 "July 29, 2024"
+                  </code>
+                </li>
+                <li>
+                  使用指定语言和选项格式化时间:{" "}
+                  <code>
+                    const formattedTime = nowTime.toLocaleTimeString('en-US',
+                    花括号_ hour 冒号 单引号2-digit单引号, minute 冒号
+                    单引号2-digit单引号, second 冒号 单引号2-digit单引号
+                    _花括号); // 例如 "10:30:00 AM"
+                  </code>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <strong>Date 对象还提供了一些方法来处理 UTC 时间: </strong> :
+              (继续沿用前面已经定义了的nowTime)
+              <ol>
+                <li>
+                  获取 UTC 年份:{" "}
+                  <code>const utcYear = nowTime.getUTCFullYear(); // 2024</code>
+                </li>
+                <li>
+                  获取 UTC 月份（0-11:{" "}
+                  <code>
+                    const utcMonth = nowTime.getUTCMonth(); // 6（表示7月）
+                  </code>
+                </li>
+                <li>
+                  获取 UTC 月中的第几天（1-31）:{" "}
+                  <code>const utcDay = nowTime.getUTCDate(); // 29</code>
+                </li>
+                <li>
+                  获取 UTC 小时（0-23）:{" "}
+                  <code>const utcHours = nowTime.getUTCHours(); // 10</code>
+                </li>
+                <li>
+                  获取 UTC 分钟（0-59）:{" "}
+                  <code>const utcMinutes = nowTime.getUTCMinutes(); // 30</code>
+                </li>
+                <li>
+                  获取 UTC 秒（0-59）:{" "}
+                  <code>const utcSeconds = nowTime.getUTCSeconds(); // 0</code>
+                </li>
+                <li>
+                  获取 UTC 毫秒（0-999）:{" "}
+                  <code>
+                    const utcMilliseconds = nowTime.getUTCMilliseconds(); // 0
+                  </code>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <strong>其他有用的方法:</strong> (继续沿用前面已经定义了的nowTime)
+              <ol>
+                <li>
+                  将日期转换为 ISO 8601 格式的字符串:
+                  <code>
+                    const isoString = nowTime.toISOString(); //
+                    "2024-07-29T10:30:00.000Z"
+                  </code>
+                </li>
+                <li>
+                  将日期转换为人类可读的日期字符串。:
+                  <code>
+                    const dateString = nowTime.toDateString(); // "Mon Jul 29
+                    2024"
+                  </code>
+                </li>
+                <li>
+                  将时间转换为人类可读的时间字符串。:
+                  <code>
+                    const timeString = nowTime.toTimeString(); // "10:30:00
+                    GMT+0000 (UTC)"
+                  </code>
+                </li>
+                <li>
+                  将日期转换为 UTC 格式的字符串。:
+                  <code>
+                    const utcString = nowTime.toUTCString(); // "Mon, 29 Jul
+                    2024 10:30:00 GMT"
+                  </code>
+                </li>
+                <li>
+                  将日期转换为 JSON 格式的字符串。:
+                  <code>
+                    const jsonString = nowTime.toJSON(); //
+                    "2024-07-29T10:30:00.000Z"
+                  </code>
+                </li>
+              </ol>
+            </li>
+            <li>
+              结合<code>Math.floor()</code>向下取整来辅助。
+            </li>
+          </ul>
+        </li>
       </ol>
 
       <h2>Real Practices</h2>
@@ -234,9 +515,18 @@ function Home() {
             <h3>考点/内容点:</h3>
             <ul>
               <li>在未知高度中，如何让元素横向&纵向居中，方法一</li>
-              <li>input 框 必填，且利用 name 和 onChange 来 单一命名内容 和 控制变化 </li>
-              <li>hook: useState: 提交form后清空input框。 所有input & textarea都需要设置自己的变量，并初始化</li>
-              <li>css选择器优先级, <code>display: inline-block</code>允许元素不会独占一行，可以与其他行内或行内块级元素并排显示；且可以设置宽度、高度、内边距、边框和外边距。 </li>
+              <li>
+                input 框 必填，且利用 name 和 onChange 来 单一命名内容 和
+                控制变化{" "}
+              </li>
+              <li>
+                hook: useState: 提交form后清空input框。 所有input &
+                textarea都需要设置自己的变量，并初始化
+              </li>
+              <li>
+                css选择器优先级, <code>display: inline-block</code>
+                允许元素不会独占一行，可以与其他行内或行内块级元素并排显示；且可以设置宽度、高度、内边距、边框和外边距。{" "}
+              </li>
             </ul>
           </div>
         </li>
@@ -263,7 +553,11 @@ function Home() {
         </li>
 
         <li>
-          <Link to="./flight-booker" className="li-title">
+          <Link
+            to="./flight-booker"
+            className="li-title"
+            id="flight-booker-link"
+          >
             Flight Booker Practice
           </Link>
           <div className="important-paragraph">
@@ -325,8 +619,17 @@ function Home() {
             </a>
             <h3>考点/内容点:</h3>
             <ul>
-              <li>css 布局</li>
-              <li>对display: flex 的应用</li>
+              <li>css 布局。对display: flex 的应用</li>
+              <li>
+                当 flex-grow 和 flex-shrink 都为 0 时，flex
+                项目的大小将完全由其内容和其他样式（如 width 和 height）决定。
+                项目不会尝试占据多余空间或在空间不足时收缩。
+                这种设置在需要固定大小的项目时非常有用，例如固定宽度的按钮或标签。
+              </li>
+              <li>
+                只要父组件是flex，那么子组件可以通过 <code>flex-grow: 1;</code>{" "}
+                来填充剩余空间。
+              </li>
             </ul>
             <h4>补充学习:</h4>
             <ul>
@@ -727,7 +1030,7 @@ function Home() {
         </li>
 
         <li>
-          <Link to="/analog-clock" className="li-title">
+          <Link to="/analog-clock" className="li-title" id="analog-clock-link">
             Analog Clock
           </Link>
           <div className="important-paragraph">
@@ -802,7 +1105,12 @@ function Home() {
         </li>
 
         <li>
-          <Link to="/digital-clock" className="li-title">
+          <Link
+            to="/digital-clock"
+            className="li-title"
+            id="digital-clock-link"
+            ref={sectionRef}
+          >
             Digital Clock (Easier than Analog Clock, Same Logic and
             Implementation)
           </Link>
@@ -819,7 +1127,7 @@ function Home() {
               </li>
               <li>
                 拆分component，不同function
-                component负责不同的功能，来提高代码阅读量
+                component负责不同的功能，来提高代码阅读量。主组件来负责整合这些功能。
               </li>
             </ul>
           </div>
@@ -1094,7 +1402,7 @@ function Home() {
         </li>
 
         <li>
-          <Link to="/stopwatch" className="li-title">
+          <Link to="/stopwatch" className="li-title" id="stopwatch-link">
             Stopwatch
           </Link>
           <div className="important-paragraph">

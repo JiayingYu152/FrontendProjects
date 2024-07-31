@@ -25,7 +25,7 @@ useCurrentDate 是一个自定义Hook，用于 每1000毫秒/1秒 更新一次�
 function useCurrentDate() {
   const [date, setDate] = useState(new Date());
 
-  // Kick off the timer.
+  // Kick off the timer. 
   useEffect(() => {
     const timer = window.setInterval(() => {
       setDate(new Date());
