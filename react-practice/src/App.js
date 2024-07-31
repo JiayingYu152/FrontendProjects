@@ -30,8 +30,70 @@ import TrafficLight from "./practice/TrafficLight";
 
 function Home() {
   return (
-    <div>
+    <div className="home-page-container">
       <h1 className="home-page-header">Welcome to React Practice</h1>
+      <h2>Review Knowledge</h2>
+      <ol>
+        <li>
+          <strong>
+            <code>useEffect() HOOK</code>:
+          </strong>
+          <ul>
+            <li>用于在函数组件中处理副作用。</li>
+            <li>
+              <strong>基本用法：</strong>{" "}
+              <code>useEffect(() => {"副作用代码"}, [依赖项]);</code>{" "}
+              //副作用代码: 在依赖项变化时或组件首次渲染后执行的代码。
+            </li>
+            <li>
+              什么时候需要return？ => useEffect
+              中的返回函数用于清理副作用。如果副作用需要清理（例如订阅、计时器），需要返回一个清理函数。如果副作用不需要清理（例如简单的数据获取），可以省略返回函数。
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          {" "}
+          <strong>
+            <code>setTimeout</code> && <code>setInterval</code>
+          </strong>
+          :{" "}
+          <ul>
+            <li>
+              <code>setTimeout</code>
+              ：在指定的延迟（以毫秒为单位）后执行一次代码，常用于延迟提示、递归定时任务。
+              语法：{" "}
+              <code>const timerId = setTimeout(function, delay, ...args);</code>
+              <ul>
+                <li>function：要执行的函数。</li>
+                <li>delay：延迟时间，以毫秒为单位。</li>
+                <li>...args：传递给函数的参数（可选）。</li>
+                <li>timerId：返回的定时器 ID，可用于取消定时器。</li>
+              </ul>
+              利用 <code>clearTimeout(timerId);</code> 来清除定时器。
+            </li>
+
+            <br />
+            <li>
+              <code>setInterval</code>
+              ：每隔指定的时间间隔（以毫秒为单位）重复执行代码，常用于定时数据获取、动画更新。
+              语法：
+              <code>
+                const intervalId = setInterval(function, delay, ...args);
+              </code>{" "}
+              <ul>
+                <li>function：要执行的函数。 </li>
+                <li>delay：时间间隔，以毫秒为单位。 </li>
+                <li>...args：传递给函数的参数（可选）。 </li>
+                <li>intervalId：返回的定时器 ID，可用于取消定时器。</li>
+              </ul>
+              利用 <code>clearInterval(intervalId);</code> 来清除定时器。
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Real Practices</h2>
       <ol className="home-page-ul-container">
         <li>
           <Link to="/contact-form" className="li-title">
@@ -212,7 +274,10 @@ function Home() {
               </li>
               <li>
                 <code>aria-hidden</code>: [状态属性(State Attributes)]
-                表示元素是否对辅助技术隐藏，值为 true 或 false. 默认值为false，元素对辅助技术是可见的。 如果有些内容只是装饰性的，对用户无实质帮助，可以使用 aria-hidden="true"。例如，图标、装饰性的图像或分隔符。
+                表示元素是否对辅助技术隐藏，值为 true 或 false.
+                默认值为false，元素对辅助技术是可见的。
+                如果有些内容只是装饰性的，对用户无实质帮助，可以使用
+                aria-hidden="true"。例如，图标、装饰性的图像或分隔符。
               </li>
               <li>
                 <code>aria-label</code>: 为元素提供文本标签，用于描述该元素。
