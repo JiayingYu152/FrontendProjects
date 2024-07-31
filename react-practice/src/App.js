@@ -91,6 +91,134 @@ function Home() {
             </li>
           </ul>
         </li>
+
+        <li>
+          <strong>
+            <code>form, input, & textarea</code>元素的属性
+          </strong>{" "}
+          <ul>
+            <li>
+              {" "}
+              form{" "}
+              <ul>
+                <li>name: 表单的名称。</li>
+                <li>action: 表单提交时的目标 URL</li>
+                <li>method: 表单提交的 HTTP 方法（GET 或 POST）。</li>
+                <li>autocomplete: 表单的自动完成行为（on 或 off）。</li>
+                <li>
+                  target: 表单提交的目标（例如 _blank、_self、_parent、_top
+                  或帧名）。{" "}
+                  <ul>
+                    <li>
+                      _self（默认值）：在当前窗口或框架中加载结果页面。可以省略不写。
+                    </li>
+                    <li>_blank：在新窗口或新标签页中加载结果页面。</li>
+                    <li>
+                      _parent：在父框架中加载结果页面。如果没有父框架，则行为与
+                      _self 相同。
+                    </li>
+                    <li>
+                      _top：在整个窗口中加载结果页面，替换所有框架。如果没有使用框架，则行为与
+                      _self 相同。
+                    </li>
+                    <li>
+                      framename：在指定名称的框架中加载结果页面。需要与 已经用
+                      "name=framename"定义了的元素(e.g. 比如说 iframe)
+                      一起使用。
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  rel: 提交表单后页面之间的关系（例如 noopener 或
+                  noreferrer，主要用于 target="_blank" 时）。
+                </li>
+                <li>
+                  enctype: 表单数据的编码类型（用于 POST 方法），常见的值有
+                  application/x-www-form-urlencoded、multipart/form-data 和
+                  text/plain。
+                </li>
+                <li>novalidate: 表单提交时不进行验证。</li>
+              </ul>
+            </li>
+            <li>
+              {" "}
+              input. <strong>!!input是单扩，没有闭合扩</strong>
+              <ul>
+                <li>
+                  type: 输入字段的类型（例如 text、password、email、number、date
+                  等）。
+                </li>
+                <li>name: 输入字段的名称，表单提交时会包含这个名称。</li>
+                <li>value: 输入字段的初始值。</li>
+                <li>
+                  disabled: 禁用输入字段。 e.g. <code>input disabled</code>
+                </li>
+                <li>placeholder: 输入字段的占位符文本。</li>
+                <li>required: 使输入字段成为必填项。</li>
+                <li>
+                  readonly: 使输入字段只读。 e.g. <code>input readonly</code>
+                </li>
+                <li>maxlength: 输入字段允许的最大字符数。</li>
+                <li>minlength: 输入字段允许的最小字符数。</li>
+                <li>
+                  pattern: 用于验证输入的正则表达式模式。多用于"type:
+                  password"部分。 e.g. <code>input pattern="[A-Za-z]{3}"</code>
+                </li>
+                <li>
+                  min 和 max: 输入字段允许的最小值和最大值（通常用于 number 和
+                  date 类型）。e.g.{" "}
+                  <code>input type="number" min="1" max="10"</code>
+                </li>
+                <li>
+                  step: 输入字段的步进值（通常用于 number 和 range 类型）。e.g.{" "}
+                  <code>input type="number" step="1"</code>
+                </li>
+                <li>autocomplete: 控制自动完成行为（on 或 off）。</li>
+                <li>
+                  autofocus: 页面加载时自动聚焦到输入字段。e.g.{" "}
+                  <code>input autofocus</code>
+                </li>
+                <li>list: 关联的 "datalist" 元素的 ID，用于显示建议选项。</li>
+                <li>
+                  multiple: 允许选择多个值（通常用于 file 和 email 类型）。
+                </li>
+                <li>accept: 规定文件输入的接受类型（通常用于 file 类型）。</li>
+                <li>
+                  size: 输入字段的可见字符数（不常用）。 e.g.{" "}
+                  <code>input type="file" multiple</code>
+                </li>
+              </ul>
+            </li>
+            <li>
+              {" "}
+              textarea <strong>!!textarea有闭合扩</strong>{" "}
+              <ul>
+                <li>name: 文本区域的名称，表单提交时会包含这个名称。</li>
+                <li>rows: 文本区域的行数。</li>
+                <li>cols: 文本区域的列数。</li>
+                <li>placeholder: 文本区域的占位符文本。</li>
+                <li>maxlength: 文本区域允许的最大字符数。</li>
+                <li>minlength: 文本区域允许的最小字符数。</li>
+                <li>required: 使文本区域成为必填项。</li>
+                <li>readonly: 使文本区域只读。</li>
+                <li>disabled: 禁用文本区域。</li>
+                <li>autofocus: 页面加载时自动聚焦到文本区域。</li>
+                <li>wrap: 控制文本如何换行（soft、hard、off）。</li>
+                <li>spellcheck: 启用或禁用拼写检查（true 或 false）。</li>
+                <li>autocomplete: 控制自动完成行为（on 或 off）。</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><strong>CSS 之 <code>display: inline-block</code></strong>: <ul>
+          <li><strong>特点1: 行内排列</strong>：元素不会独占一行，可以与其他行内或行内块级元素并排显示。</li>
+          <li><strong>特点2: 块级特性</strong>：可以设置宽度、高度、内边距、边框和外边距。</li>
+          <li><strong>使用场景1: 对齐元素</strong>: 在同一行中对齐多个元素，并且希望能够控制这些元素的宽高和内外边距。</li>
+          <li><strong>使用场景2: 按钮或链接</strong>: 需要多个按钮或链接并排显示，并且希望能够设置它们的宽度和高度。</li>
+          <li><strong>使用场景3: 表单元素(Contact Form Case 之 label处)</strong>: 在表单布局中，通常需要对齐标签和输入框，并且希望能够控制标签和输入框的宽高。In this case, 通过设置 label 的固定宽度，可以保证所有 label 的对齐更加整齐和一致，从而改善表单的布局和可读性。</li>
+          <li><strong>使用场景4: 导航栏</strong>: 在导航栏中对齐多个导航链接，并希望能够控制每个链接的宽高和内外边距。</li>
+          </ul></li>
       </ol>
 
       <h2>Real Practices</h2>
@@ -106,9 +234,9 @@ function Home() {
             <h3>考点/内容点:</h3>
             <ul>
               <li>在未知高度中，如何让元素横向&纵向居中，方法一</li>
-              <li>input 框 必填</li>
-              <li>hook: useState: 提交form后清空input框</li>
-              <li>css选择器优先级</li>
+              <li>input 框 必填，且利用 name 和 onChange 来 单一命名内容 和 控制变化 </li>
+              <li>hook: useState: 提交form后清空input框。 所有input & textarea都需要设置自己的变量，并初始化</li>
+              <li>css选择器优先级, <code>display: inline-block</code>允许元素不会独占一行，可以与其他行内或行内块级元素并排显示；且可以设置宽度、高度、内边距、边框和外边距。 </li>
             </ul>
           </div>
         </li>
