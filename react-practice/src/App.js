@@ -26,6 +26,7 @@ import TransferList from "./practice/TransferList";
 import UndoableCounter from "./practice/UndoableCounter";
 import WhackAMole from "./practice/WhackAMole";
 import MemoryGame from "./practice/MemoryGame";
+import TrafficLight from "./practice/TrafficLight";
 
 function Home() {
   return (
@@ -211,7 +212,7 @@ function Home() {
               </li>
               <li>
                 <code>aria-hidden</code>: [状态属性(State Attributes)]
-                表示元素是否对辅助技术隐藏，值为 true 或 false
+                表示元素是否对辅助技术隐藏，值为 true 或 false. 默认值为false，元素对辅助技术是可见的。 如果有些内容只是装饰性的，对用户无实质帮助，可以使用 aria-hidden="true"。例如，图标、装饰性的图像或分隔符。
               </li>
               <li>
                 <code>aria-label</code>: 为元素提供文本标签，用于描述该元素。
@@ -1049,6 +1050,21 @@ function Home() {
             <ul></ul>
           </div>
         </li>
+
+        <li>
+          <Link to="/traffic-light" className="li-title">
+            Traffic Light
+          </Link>
+          <div className="important-paragraph">
+            <a href="https://www.greatfrontend.com/questions/user-interface/traffic-light">
+              Link
+            </a>
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+        </li>
       </ol>
     </div>
   );
@@ -1090,6 +1106,7 @@ function App() {
         <Route path="/undoable-counter" element={<UndoableCounter />} />
         <Route path="/whack-a-mole" element={<WhackAMole />} />
         <Route path="/memory-game" element={<MemoryGame />} />
+        <Route path="/traffic-light" element={<TrafficLight />} />
       </Routes>
     </Router>
   );
