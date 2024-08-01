@@ -1,0 +1,17 @@
+.digital-clock-container {
+  display: flex;
+  font-family: "Digital-7", sans-serif;
+  font-size: 2em;
+  color: #fff;
+  background-color: #222;
+  width: fit-content;
+  padding: 20px 30px;
+  border: 5px solid grey;
+  border-radius: 8px;
+  margin: 5%;
+}
+
+.digital-clock-container span {
+  display: inline-block;
+  margin: 0 0.1em;
+}

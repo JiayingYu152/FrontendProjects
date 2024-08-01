@@ -1,0 +1,33 @@
+.progress-bar-ii-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  width: 90vw;
+  margin: 5%;
+}
+
+.progress-bar-ii-bars-containers {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.progress-bar-ii-single-bar {
+  background-color: #ccc;
+  height: 8px;
+}
+
+.bar-contents {
+  background-color: green;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition-duration: 2000ms;
+  transition-property: transform;
+  transition-timing-function: linear;
+}
+
+.bar-contents--filled {
+  transform: scaleX(1);
+}

@@ -1,0 +1,28 @@
+.stopwatch-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10%;
+}
+
+.stopwatch-time {
+  align-items: baseline;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  user-select: none;
+}
+
+.stopwatch-time-unit {
+  font-size: 24px;
+}
+
+.stopwatch-time-number {
+  font-size: 62px;
+}
+
+.stopwatch-time-number--small {
+  font-size: 36px;
+}

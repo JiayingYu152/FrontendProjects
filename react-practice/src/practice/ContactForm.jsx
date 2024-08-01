@@ -7,6 +7,7 @@ const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  
   const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
 
   const handleSubmit = (event) => {

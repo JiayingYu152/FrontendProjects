@@ -1,0 +1,35 @@
+.grid-light-container {
+  display: flex;
+  flex-direction: column;
+  align-items: ceter;
+  justify-content: center;
+  gap: 16px;
+}
+
+.grid-light-page-grid {
+  --spacing: 20px;
+
+  display: grid;
+  max-width: 300px;
+  width: 100%;
+  padding: var(--spacing);
+  gap: var(--spacing);
+  border: 1px solid #000;
+  margin: var(--spacing) auto;
+}
+
+.grid-light-page-cell {
+  background-color: transparent;
+  border: 1px solid #000;
+  height: 0;
+  padding-bottom: 100%;
+  cursor: pointer;
+}
+
+.grid-light-page-cell--actived {
+  background-color: green;
+}
+
+.grid-light-container pre {
+  margin: 10%;
+}

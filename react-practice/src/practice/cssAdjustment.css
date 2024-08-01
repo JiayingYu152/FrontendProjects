@@ -1,0 +1,82 @@
+/*
+//在GreatFrontEnd 中，还需要写： 
+body {
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  min-height: 100vh;;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+*/
+
+.css-adj-page-main-page {
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.css-adj-page-header {
+  /*在GreatFrontEnd 中，是 header*/
+  background-color: tomato;
+  height: 60px;
+  margin: 0;
+  padding: 12px;
+}
+
+.css-adj-page-main-content-container {
+  /*在GreatFrontEnd 中，是 .main-content-container*/
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.css-adj-page-nav {
+  /*在GreatFrontEnd 中，是 nav*/
+  background-color: coral;
+  width: 100px;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 12px;
+}
+
+.css-adj-page-main {
+  /*在GreatFrontEnd 中，是 main*/
+  background-color: moccasin;
+  flex-grow: 1;
+  margin: 0;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.css-adj-page-sidebar {
+  /*在GreatFrontEnd 中，是 aside*/
+  background-color: sandybrown;
+  width: 100px;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 12px;
+}
+
+.css-adj-page-footer {
+  /*在GreatFrontEnd 中，是 footer*/
+  background-color: slategray;
+  height: 100px;
+  margin: 0;
+  padding: 12px;
+}

@@ -1,0 +1,42 @@
+.tabs-page-container {
+  align-items: center;
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.tabs-page-single-tab-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 70vw;
+  height: 90vh;
+  margin: 5%;
+}
+
+.tabs-page-tabs-list {
+  display: flex;
+  gap: 6px;
+}
+
+.tabs-page-tabs-list-item {
+  --active-color: blueviolet;
+
+  background: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+.tabs-page-tabs-list-item:hover {
+  border-color: var(--active-color);
+  color: var(--active-color);
+}
+
+.tabs-page-tabs-list-item--active,
+.tabs-page-tabs-list-item--active:hover {
+  border-color: var(--active-color);
+  background-color: var(--active-color);
+  color: #fff;
+}

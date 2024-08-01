@@ -1,0 +1,22 @@
+.mortgage-calculator-page-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.mortgage-calculator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mortgage-calculator-results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
