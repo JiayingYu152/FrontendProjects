@@ -498,8 +498,65 @@ function Home() {
             <li>
               结合<code>Math.floor()</code>向下取整来辅助。
             </li>
+            <li>
+              利用helper function 来format 时间使得时间如果是小于10的话展示出
+              09, 06 等字样: <code>formatTime()</code>
+            </li>
+            <li>利用 <code>time</code> 元素来表达时间</li>
           </ul>
         </li>
+
+        <li>
+          <strong>time 元素</strong>{" "}
+          <ul>
+            <li>
+              "time" 是 HTML5
+              引入的一个元素，用于表示特定的时间或日期，或者是一个与时间相关的文本。使用
+              "time"
+              元素可以使时间和日期信息对用户和机器（如搜索引擎和脚本）更加明确和易于理解。
+            </li>
+            <li>
+              time元素的属性: <code>datetime</code>
+              ：这是一个可选属性，用于指定一个合法的日期或时间字符串。这个属性使时间数据可以被机器准确解析，即使内容中显示的时间格式可能因地域或用户偏好不同而变化。e.g.{" "}
+              <ul>
+                <li>
+                  日期：
+                  <code>
+                    ｜time datetime="2024-07-29"｜ July 29, 2024 ｜/time｜
+                  </code>
+                </li>
+                <li>
+                  时间：{" "}
+                  <code> ｜time datetime="10:30"｜ 10:30 AM ｜/time｜ </code>
+                </li>
+                <li>
+                  日期和时间：
+                  <code>
+                    {" "}
+                    ｜time datetime="2024-07-29T10:30:00"｜ July 29, 2024, at
+                    10:30 AM ｜/time｜{" "}
+                  </code>
+                </li>
+                <li>
+                  时间区间：
+                  <code> ｜time datetime="P2D"｜ 2 days ｜/time｜ </code>
+                </li>
+              </ul>
+            </li>
+            <li>
+          <strong>优点</strong>{" "}
+          <ol>
+            <li>可访问性：为视障用户提供明确的时间信息。</li>
+            <li>
+              SEO
+              友好：搜索引擎可以更好地理解页面内容，提高网页的搜索引擎优化（SEO）
+            </li>
+            <li>数据处理：脚本可以更容易地提取和处理时间和日期信息。</li>
+          </ol>
+        </li>
+          </ul>
+        </li>
+        
       </ol>
 
       <h2>Real Practices</h2>
