@@ -104,7 +104,8 @@ function Home() {
 
         <li>
           <strong>
-            <code>form, input, & textarea</code>元素的属性
+            <code>form</code>元素 以及常见表单组件{" "}
+            <code>input, textarea, select & option</code> 的属性
           </strong>{" "}
           <ul>
             <li>
@@ -150,9 +151,14 @@ function Home() {
                 <li>novalidate: 表单提交时不进行验证。</li>
               </ul>
             </li>
+
+            <br />
+            <li>
+              <strong>下面是 form元素中常见的其他子组件</strong>
+            </li>
             <li>
               {" "}
-              input. <strong>!!input是单扩，没有闭合扩</strong>
+              input元素： <strong>!!input是单扩，没有闭合扩</strong>
               <ul>
                 <li>
                   type: 输入字段的类型（例如 text、password、email、number、date
@@ -201,7 +207,7 @@ function Home() {
             </li>
             <li>
               {" "}
-              textarea <strong>!!textarea有闭合扩</strong>{" "}
+              textarea元素： <strong>!!textarea有闭合扩</strong>{" "}
               <ul>
                 <li>name: 文本区域的名称，表单提交时会包含这个名称。</li>
                 <li>rows: 文本区域的行数。</li>
@@ -218,6 +224,115 @@ function Home() {
                 <li>autocomplete: 控制自动完成行为（on 或 off）。</li>
               </ul>
             </li>
+
+            <li>
+              select & option元素:
+              "select"用于定义一个下拉菜单。它必须包含一个或多个 "option"
+              子元素。{" "}
+              <ul>
+                <li>
+                  select属性 1: name：定义下拉列表的名称，用于提交表单时的键。
+                </li>
+                <li>select属性 2: multiple：允许用户选择多个选项。</li>
+                <li>select属性 3: size：定义下拉列表显示的选项数。</li>
+                <li>
+                  比如说 允许多选的下拉列表，只有三个选择：{" "}
+                  <code>
+                    |select name="fruits" multiple size="3"| |option
+                    value="apple"|Apple|/option| 等另外两个option |/select|
+                  </code>
+                </li>
+                <br />
+                <li>"option"用于定义下拉列表中的一个选项</li>
+                <li>option属性 1: value：提交表单时发送到服务器的选项值。</li>
+                <li>
+                  option属性 2: selected：如果存在，则该选项是默认选择的。
+                </li>
+                <li>option属性 3: disabled：禁用选项，使其无法被选择。</li>
+                <br />
+                <li>
+                  此外，还可以通过 “optgroup” 对选项进行分组，提高用户体验。
+                </li>
+                <li>
+                  e.g.{" "}
+                  <code>
+                    {" "}
+                    |select name="vehicle"|_|optgroup label="Cars"|_|option
+                    value="volvo"|Volvo|/option|,|option
+                    value="saab"|Saab|/option|_|/optgroup|_|/select|
+                  </code>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              button元素：
+              用于创建可点击的按钮，可以是提交按钮、重置按钮或普通按钮。{" "}
+              <ul>
+                button属性之 "type":{" "}
+                <li>type="button" (默认值)：普通按钮，不会提交表单。</li>
+                <li>
+                  type="submit": 支持提交表单功能。 需要连接API来实现提交功能。
+                </li>
+                <li>
+                  type="reset":
+                  支持重置表单功能。需要考虑到所有useState变量来重置成 default
+                  value 来实现重置功能。{" "}
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              label元素：
+              <ul>
+                <li>
+                  用于创建可点击的按钮，可以是提交按钮、重置按钮或普通按钮。
+                </li>
+                <li>
+                  使用 "label"
+                  可以提高表单的可访问性，使得表单更加友好，尤其对于使用屏幕阅读器的用户。
+                </li>
+                <li>
+                  "label"
+                  元素通常与表单控件（如"input"、"textarea"、"select"等）结合使用，以提供相关说明或提示。它可以通过"for属性"与表单控件进行关联。
+                </li>
+                <li>
+                  <strong>通过 for 属性关联:</strong>{" "}
+                  "for属性值"应与目标表单控件的"id属性值"相匹配。这样，当用户点击"label"时，浏览器会将焦点移动到关联的表单控件上。!!【确保每个表单控件的id在页面中是唯一的，以避免与其他控件冲突。】{" "}
+                </li>
+                <li>
+                  <strong>不使用 for 属性的嵌套方式:</strong>
+                  如果"label"直接包含表单控件，可以省略for属性。 e.g.{" "}
+                  <code>
+                    |label| Username: |input type="text" name="username" /|
+                    |/label|
+                  </code>{" "}
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              fieldset & legend元素: "fieldset"
+              用于对表单内的元素进行分组，"legend" 用于为分组提供标题
+            </li>
+
+            <li>
+              datalist元素: 与 "input"结合使用，为输入框提供自动完成功能。
+            </li>
+
+            <li>
+              {" "}
+              ouput元素: 用于显示计算结果或动态内容。 e.g.{" "}
+              <code>|output name="result" for="a b"|0|/output|</code>
+            </li>
+
+            <li>
+              {" "}
+              progress & meter 元素: "progress"用于显示任务的进度。
+              "meter"用于显示一个给定范围内的数值。
+            </li>
+
+            <li> optgroup元素: 用于在"select"元素中对选项进行分组。</li>
           </ul>
         </li>
 
@@ -502,7 +617,9 @@ function Home() {
               利用helper function 来format 时间使得时间如果是小于10的话展示出
               09, 06 等字样: <code>formatTime()</code>
             </li>
-            <li>利用 <code>time</code> 元素来表达时间</li>
+            <li>
+              利用 <code>time</code> 元素来表达时间
+            </li>
           </ul>
         </li>
 
@@ -544,19 +661,18 @@ function Home() {
               </ul>
             </li>
             <li>
-          <strong>优点</strong>{" "}
-          <ol>
-            <li>可访问性：为视障用户提供明确的时间信息。</li>
-            <li>
-              SEO
-              友好：搜索引擎可以更好地理解页面内容，提高网页的搜索引擎优化（SEO）
+              <strong>优点</strong>{" "}
+              <ol>
+                <li>可访问性：为视障用户提供明确的时间信息。</li>
+                <li>
+                  SEO
+                  友好：搜索引擎可以更好地理解页面内容，提高网页的搜索引擎优化（SEO）
+                </li>
+                <li>数据处理：脚本可以更容易地提取和处理时间和日期信息。</li>
+              </ol>
             </li>
-            <li>数据处理：脚本可以更容易地提取和处理时间和日期信息。</li>
-          </ol>
-        </li>
           </ul>
         </li>
-        
       </ol>
 
       <h2>Real Practices</h2>
