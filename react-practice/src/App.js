@@ -4,6 +4,7 @@ import "./App.css";
 import ContactForm from "./practice/ContactForm";
 import FoldingDivItem from "./practice/FoldingDivItem";
 import FlightBooker from "./practice/FlightBooker";
+import InAndDeCounter from "./practice/InAndDeCounter";
 import GenerateTable from "./practice/GenerateTable";
 import CssAdjustment from "./practice/CssAdjustment";
 import ProgressBar from "./practice/ProgressBar";
@@ -52,31 +53,54 @@ function Home() {
             <li>用于在函数组件中处理副作用。</li>
             <li>
               <strong>基本用法：</strong>{" "}
-              <code>useEffect(() => {"副作用代码"}, [依赖项]);</code>{" "}
+              <code>useEffect(() 指向{"副作用代码"}, [依赖项]);</code>{" "}
               //副作用代码: 在依赖项变化时或组件首次渲染后执行的代码。
             </li>
             <li>
-              什么时候需要return？ => useEffect
+              什么时候需要return？ useEffect
               中的返回函数用于清理副作用。如果副作用需要清理（例如订阅、计时器），需要返回一个清理函数。如果副作用不需要清理（例如简单的数据获取），可以省略返回函数。
             </li>
           </ul>
         </li>
 
-        <li><strong><code>useRef() HOOK:</code></strong> <ul>
-          <li>可以用来存储任何在渲染周期中不需要重新渲染的可变值。</li>
-         <li>useRef 的特点和用途: <ul>
-            <li>持久化存储：在组件的生命周期中，useRef 的返回对象会保持不变。这意味着你可以用它来存储跨渲染周期不会改变的变量。</li>
-            <li>不触发重新渲染：useRef 的 current 属性的改变不会触发组件的重新渲染。与 useState 不同，改变 useRef 的值不会导致组件重新渲染。</li>
-            <li>访问 DOM 元素：useRef 最常见的用途之一是访问 DOM 元素，类似于 class 组件中的 React.createRef()。</li>
-            <li>存储任何可变值：useRef 可以用来存储任何类型的数据，包括对象、数组、数字、字符串等。这使得它非常灵活。</li>
-
-            
-            
-            </ul></li>
-            <li><strong><code>current</code>属性：</strong> current 是唯一且核心的属性：用于存储需要在渲染之间共享的可变数据。其应用场景广泛：适用于 DOM 元素引用、状态缓存、保存前次状态等场景。</li>
-          
-          
-          </ul></li>
+        <li>
+          <strong>
+            <code>useRef() HOOK:</code>
+          </strong>{" "}
+          <ul>
+            <li>可以用来存储任何在渲染周期中不需要重新渲染的可变值。</li>
+            <li>
+              useRef 的特点和用途:{" "}
+              <ul>
+                <li>
+                  持久化存储：在组件的生命周期中，useRef
+                  的返回对象会保持不变。这意味着你可以用它来存储跨渲染周期不会改变的变量。
+                </li>
+                <li>
+                  不触发重新渲染：useRef 的 current
+                  属性的改变不会触发组件的重新渲染。与 useState 不同，改变
+                  useRef 的值不会导致组件重新渲染。
+                </li>
+                <li>
+                  访问 DOM 元素：useRef 最常见的用途之一是访问 DOM 元素，类似于
+                  class 组件中的 React.createRef()。
+                </li>
+                <li>
+                  存储任何可变值：useRef
+                  可以用来存储任何类型的数据，包括对象、数组、数字、字符串等。这使得它非常灵活。
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>
+                <code>current</code>属性：
+              </strong>{" "}
+              current
+              是唯一且核心的属性：用于存储需要在渲染之间共享的可变数据。其应用场景广泛：适用于
+              DOM 元素引用、状态缓存、保存前次状态等场景。
+            </li>
+          </ul>
+        </li>
 
         <li>
           {" "}
@@ -769,6 +793,19 @@ function Home() {
                 容易忘记在submit function里先 阻止事件的默认行为
                 (对于表单提交事件，浏览器的默认行为是发送表单数据到服务器并重新加载页面。)
               </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <Link to="/increment-and-decrement-counter" className="li-title">
+            Increment and Decrement Counter
+          </Link>
+          <div className="important-paragraph">
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>对于useState HOOK 的使用</li>
+              <li>对className的切换</li>
             </ul>
           </div>
         </li>
@@ -1768,6 +1805,10 @@ function App() {
         <Route path="/contact-form" element={<ContactForm />} />
         <Route path="accordion" element={<FoldingDivItem />} />
         <Route path="/flight-booker" element={<FlightBooker />} />
+        <Route
+          path="/increment-and-decrement-counter"
+          element={<InAndDeCounter />}
+        />
         <Route path="/generate-table" element={<GenerateTable />} />
         <Route path="/css-adjustment" element={<CssAdjustment />} />
         <Route path="/progress-bar" element={<ProgressBar />} />
