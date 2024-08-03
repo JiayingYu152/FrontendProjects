@@ -827,6 +827,62 @@ function Home() {
             </li>
           </ul>
         </li>
+
+        <li>
+          <strong>
+            <code>label</code>元素
+          </strong>{" "}
+          <ul>
+            <li>
+              用于定义表单控件的标注文本，并将其与表单控件关联，以便用户在点击标签时能自动聚焦到相应的输入控件。
+            </li>
+            <li>
+              label标签中没有value属性，通过 for 属性（或在 React 中使用
+              htmlFor）与表单控件关联。
+            </li>
+            <li>
+              下面是 "for属性" 和 "htmlFor属性" 的区别和用法：
+              <table className="label-element-table">
+                <thead>
+                  <tr>
+                    <th>特性</th>
+                    <th>
+                      HTML 中的 <code>for</code>
+                    </th>
+                    <th>
+                      React 中的 <code>htmlFor</code>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>作用</td>
+                    <td colSpan={2}>绑定 "label" 和表单控件</td>
+                  </tr>
+                  <tr>
+                    <td>属性名称</td>
+                    <td>
+                      <code>for</code>
+                    </td>
+                    <td>
+                      <code>htmlFor</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>原因</td>
+                    <td>标准 HTML 属性</td>
+                    <td>避免与 JavaScript 保留字冲突</td>
+                  </tr>
+                  <tr>
+                    <td>使用场景</td>
+                    <td>普通 HTML 文档</td>
+                    <td>React 应用</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+        </li>
       </ol>
 
       <h2>Real Practices</h2>
