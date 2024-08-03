@@ -713,6 +713,110 @@ function Home() {
             </li>
           </ul>
         </li>
+
+        <li>
+          <strong>
+            <code>toLocaleString()</code>
+          </strong>{" "}
+          <ul>
+            <li>
+              是 JavaScript 中的一个内置方法，用于将 Number、Date、BigInt
+              等对象转换为一个本地化的字符串表示形式。它根据用户的语言环境和指定的选项格式化输出，使得数值和日期能够符合不同地区的显示习惯。
+            </li>
+            <li>
+              参数1—locales：一个或多个表示语言环境的字符串（可选）。如
+              'en-US'、'de-DE'、'fr-FR' 等。
+            </li>
+            <li>
+              参数2—options：一个对象，包含以下属性，用于定义格式化选项（可选）。
+            </li>
+            <li>
+              常用选项:{" "}
+              <ul>
+                <li>
+                  style：用于指定格式类型，适用于 Number 对象。可以是：
+                  <ul>
+                    <li>'decimal'：数字格式（默认）</li>{" "}
+                    <li>'currency'：货币格式</li> <li>'percent'：百分比格式</li>{" "}
+                    <li>'unit'：单位格式</li>
+                  </ul>
+                </li>
+                <li>
+                  currency：指定货币的 ISO 代码（如 'USD'、'EUR'、'JPY'）。
+                </li>
+                <li>
+                  currencyDisplay：定义货币符号如何显示。{" "}
+                  <ul>
+                    <li>'symbol'：显示货币符号（如 $）</li>
+                    <li>'code'：显示货币代码（如 USD）</li>
+                    <li>'name'：显示货币名称（如 dollar）</li>
+                  </ul>
+                </li>
+
+                <li>
+                  minimumFractionDigits 和
+                  maximumFractionDigits：指定小数位数的最小和最大值。
+                </li>
+                <li>minimumIntegerDigits：整数部分的最小位数。</li>
+                <li>useGrouping：是否使用分组分隔符（如千位分隔符）。</li>
+                <li>hour12：用于 Date 对象，指定是否使用 12 小时制。</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>table元素</strong>{" "}
+          <ul>
+            <li>
+              属性：{" "}
+              <ul>
+                <li>
+                  border：指定表格边框的宽度。例如， |table border="1"|
+                  将创建一个带有边框的表格。
+                </li>
+                <li>cellpadding：设置单元格内容与边框之间的距离。</li>
+                <li>cellspacing：设置单元格之间的距离。</li>
+                <li>
+                  width 和 height：定义表格的宽度和高度（通常通过 CSS 控制）
+                </li>
+              </ul>
+            </li>
+            <li>
+              table元素下， <code>thead</code>表头， <code>tbody</code>
+              表格主体， <code>tfoot</code>表尾。
+              逻辑分离以便于管理和样式控制。在每个component下都由{" "}
+              <code>tr</code>元素包围。详情看下。
+            </li>
+            <li>
+              <strong>
+                <code>tbody</code>元素
+              </strong>
+              ：用于定义表格的主体部分，包含数据行。在简单表格中，|tbody|
+              可以省略，但建议使用以提高可读性。
+            </li>
+            <li>
+              <strong>
+                <code>tr</code>元素
+              </strong>
+              ：定义一个表格行（Table
+              Row），包含一组相关的单元格。tr是行内容器，作为 th(表头单元) 和
+              td(表格数据单元) 的容器。可以多次使用 tr 来定义多个行。 e.g.
+              在tbody中可以有很多个tr，每个tr中又包裹着多个 td元素
+            </li>
+            <li>
+              <strong>
+                <code>td</code>元素
+              </strong>
+              ：定义一个表格的单元格，用于显示数据。可以包含文本、链接、图像等各种内容。可以选择
+              colspan 和 rowspan【可选属性】，用于跨列或跨行合并单元格。{" "}
+              <ul>
+                <li>colspan：指定单元格跨越的列数。</li>
+                <li>rowspan：指定单元格跨越的行数。</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ol>
 
       <h2>Real Practices</h2>
