@@ -815,6 +815,16 @@ function Home() {
                 <li>rowspan：指定单元格跨越的行数。</li>
               </ul>
             </li>
+            <li>
+              <strong>
+                <code>th</code>元素
+              </strong>
+              ： 代表表头单元格（Table Header）它与 "td"
+              类似，但用于定义表格的标题行或列，可以提升数据的可读性和语义化。"th"
+              通常用在表格的 "thead" 部分，但也可以在 "tbody" 和 "tfoot"
+              中使用以提供不同部分的标题信息。"th"
+              默认以粗体显示其内容，并水平居中。
+            </li>
           </ul>
         </li>
       </ol>
