@@ -881,6 +881,57 @@ function Home() {
                 </tbody>
               </table>
             </li>
+            <li>
+              其他全局属性：{" "}
+              <ul>
+                <li>id：定义元素的唯一标识符。</li>
+                <li>class：用于指定一个或多个类名，通常用于 CSS 样式。</li>
+                <li>style：直接定义内联样式。</li>
+                <li>
+                  title：为元素提供额外的信息，当用户将鼠标悬停在元素上时会显示为提示。
+                </li>
+                <li>hidden：如果存在该属性，表示元素不会被显示。</li>
+                <li>
+                  dir：设置文本方向，值可以是 ltr（从左到右）、rtl（从右到左）或
+                  auto。
+                </li>
+                <li>lang：指定元素中内容的语言。</li>
+              </ul>
+            </li>
+
+            <li>
+              label还支持 事件属性 ：{" "}
+              <ul>
+                <li>
+                  鼠标事件：
+                  <ul>
+                    <li>onclick：用户点击元素时触发。</li>
+                    <li>onmouseover：鼠标指针移动到元素上时触发。</li>
+                    <li>onmouseout：鼠标指针移出元素时触发。</li>
+                  </ul>
+                </li>
+                <li>
+                  键盘事件：{" "}
+                  <ul>
+                    <li>onkeydown：用户按下键盘按键时触发。</li>
+                    <li>onkeyup：用户释放键盘按键时触发。</li>
+                  </ul>
+                </li>
+
+                <li>
+                  焦点事件：{" "}
+                  <ul>
+                    <li>onfocus：元素获得焦点时触发。</li>
+                    <li>onblur：元素失去焦点时触发。</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              自定义数据属性允许开发者将自定义数据嵌入到 HTML 中。这些属性以
+              data- 开头，并可以通过 JavaScript 轻松访问。{" "}
+            </li>
           </ul>
         </li>
       </ol>
