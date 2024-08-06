@@ -934,6 +934,58 @@ function Home() {
             </li>
           </ul>
         </li>
+
+        <li>
+          <strong>展开语法（Spread Syntax）</strong>:{" "}
+          <ul>
+            <li>
+              展开语法是由三个点 ...
+              组成的语法，可以将一个可迭代对象（如数组、字符串、或对象）展开为单独的元素。其典型用法包括数组合并、对象合并、函数参数的展开等。
+            </li>
+            <li>
+              应用场景:{" "}
+              <ul>
+                <li>
+                  添加元素到数组末尾:
+                  如果你需要将一个元素添加到数组的末尾而不改变原数组:{" "}
+                  <code>
+                    const fruits = ['apple', 'banana']; const newFruit =
+                    'orange'; const newFruitsList = [...fruits, newFruit];
+                    console.log(newFruitsList); // 输出: ['apple', 'banana',
+                    'orange']
+                  </code>
+                </li>
+                <li>
+                  合并两个或多个数组：{" "}
+                  <code>
+                    const array1 = [1, 2, 3]; const array2 = [4, 5, 6]; const
+                    mergedArray = [...array1, ...array2];
+                    console.log(mergedArray); // 输出: [1, 2, 3, 4, 5, 6]
+                  </code>
+                </li>
+                <li>
+                  使用展开语法可以创建一个数组的浅拷贝.
+                  这种方式适用于需要创建原始数组的一个副本而不改变原始数组的情况。:{" "}
+                  <code>
+                    const originalArray = [1, 2, 3]; const copyArray =
+                    [...originalArray]; console.log(copyArray); // 输出: [1, 2,
+                    3]
+                  </code>
+                </li>
+
+                <li>
+                  函数参数展开: 将数组中的元素作为独立的参数传递给函数.
+                  下面这个方法是currying：{" "}
+                  <code>
+                    function sum(a, b, c) |"return" a + b + c; | const numbers =
+                    [1, 2, 3]; const result = sum(...numbers);
+                    console.log(result); // 输出: 6
+                  </code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ol>
 
       <h2>Real Practices</h2>
