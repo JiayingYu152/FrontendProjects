@@ -28,6 +28,7 @@ import UndoableCounter from "./practice/UndoableCounter";
 import WhackAMole from "./practice/WhackAMole";
 import MemoryGame from "./practice/MemoryGame";
 import TrafficLight from "./practice/TrafficLight";
+import FormPractice from "./practice/FormPractice";
 
 function Home() {
   const sectionRef = useRef(null);
@@ -2065,6 +2066,19 @@ function Home() {
             </ul>
           </div>
         </li>
+
+        <li>
+          <Link to="/traffic-light" className="li-title">
+            Traffic Light
+          </Link>
+          <div className="important-paragraph">
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>将hardcode内容放在外侧</li>
+              <li>array的map 遍历方法</li>
+            </ul>
+          </div>
+        </li>
       </ol>
     </div>
   );
@@ -2111,6 +2125,7 @@ function App() {
         <Route path="/whack-a-mole" element={<WhackAMole />} />
         <Route path="/memory-game" element={<MemoryGame />} />
         <Route path="/traffic-light" element={<TrafficLight />} />
+        <Route path="/form-practice" element={<FormPractice />} />  
       </Routes>
     </Router>
   );
