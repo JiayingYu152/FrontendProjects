@@ -47,6 +47,184 @@ function Home() {
       <h2>Review Knowledge</h2>
       <ol>
         <li>
+          <table>
+            <thead>
+              <th  colSpan={3}>JavaScript 对象(Object) 与 JavaScript 数组(Array)</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>
+                  <strong>
+                    JavaScript 对象(Object) 与其 <mark>属性</mark>
+                  </strong>
+                </td>
+                <td>
+                  <strong>
+                    JavaScript 数组(Array) 与其 <mark>元素</mark>
+                  </strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>介绍</td>
+                <td>
+                  对象是键值对的集合(key-value
+                  pairs)，适合用于存储相关的数据和功能。
+                </td>
+                <td>数组是一个有序的数据集合，可以通过索引访问。</td>
+              </tr>
+
+              <tr>
+                <td>初始化__方法</td>
+                <td>
+                  <mark>属性</mark>
+                  <ol>
+                    <li>
+                      对象字面量:{" "}
+                      <code>
+                        const person = |花括号| firstName: "john", age: 30,
+                        isStudent: false |花括号|
+                      </code>
+                    </li>
+                    <li>
+                      new Object() 语法:{" "}
+                      <code>
+                        const car = new Object(); car.make = "Toyota"; car.year
+                        = 2020;
+                      </code>
+                    </li>
+                  </ol>
+                </td>
+
+                <td>
+                  <mark>元素</mark>{" "}
+                  <ol>
+                    <li>
+                      数组字面量:{" "}
+                      <code>const fruits = ['apple', 'banana', 'cherry'];</code>
+                    </li>
+                    <li>
+                      new Array() 语法: const numbers = new Array(1, 2, 3, 4,
+                      5);
+                    </li>
+                  </ol>
+                </td>
+              </tr>
+
+              <tr>
+                <td>访问__方法</td>
+                <td>
+                  <mark>属性</mark>
+                  可以使用点操作符（.）或者方括号（[]）来访问对象的属性。{" "}
+                  <ol>
+                    <li>
+                      使用点操作符:{" "}
+                      <code>console.log(person.name); // 输出: John</code>
+                    </li>
+                    <li>
+                      使用方括号:{" "}
+                      <code>console.log(person['age']); // 输出: 30</code>{" "}
+                    </li>
+                  </ol>
+                </td>
+                <td>
+                  <mark>元素</mark>通过索引来访问数组的元素，索引从 0 开始。{" "}
+                  <code>
+                    console.log(fruits[0]); // 输出: apple.
+                    console.log(numbers[2]); // 输出: 3
+                  </code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>修改__方法</td>
+                <td>
+                  <mark>属性</mark>
+                  同样地，你可以使用点操作符或方括号来修改对象的属性。
+                  <ol>
+                    <li>
+                      修改属性值:{" "}
+                      <code>person.age = 31; person['isStudent'] = true;</code>
+                    </li>
+                    <li>
+                      添加新的属性:{" "}
+                      <code>
+                        person.gender = 'male'; person['height'] = 180;
+                      </code>
+                    </li>
+                  </ol>
+                </td>
+                <td>
+                  <mark>元素</mark>直接使用索引来修改数组的元素。:{" "}
+                  <code>
+                    fruits[1] = 'blueberry'; // 修改第二个元素.
+                    console.log(fruits); // 输出: ['apple', 'blueberry',
+                    'cherry']
+                  </code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>操作__方法</td>
+                <td>
+                  <mark>属性</mark>删除对象的属性: 使用 delete 操作符:{" "}
+                  <code>
+                    delete person.age; console.log(person); // |花括号| name:
+                    'John', isStudent: true, gender: 'male', height: 180
+                    |花括号|
+                  </code>
+                </td>
+
+                <td>
+                  <mark>元素</mark>{" "}
+                  <ol>
+                    <li>
+                      使用 push() 在数组的末尾<strong>添加元素</strong>。{" "}
+                      <code>
+                        fruits.push('date');console.log(fruits); // 输出:
+                        ['apple', 'blueberry', 'cherry', 'date']
+                      </code>
+                    </li>
+
+                    <li>
+                      使用 pop() 从数组的末尾<strong>删除元素</strong>。{" "}
+                      <code>
+                        fruits.pop(); console.log(fruits); // 输出: ['apple',
+                        'blueberry', 'cherry']
+                      </code>
+                    </li>
+
+                    <li>
+                      使用 for 循环或 forEach() 方法<strong>遍历数组</strong>。
+                    </li>
+                  </ol>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td   colSpan={3}>
+                  <strong>什么时候使用对象和数组</strong>:{" "}
+                  <ol>
+                    <li>
+                      <mark>Object 对象</mark>:
+                      当你有相关属性和值的集合，且需要通过键名来访问时，使用对象。In
+                      short, 当数据是无序的且具有唯一标识时，使用对象。
+                    </li>
+                    <li>
+                      <mark>Array数组</mark>:
+                      当你有一个有序的列表，且需要通过索引来访问时，使用数组。In
+                      short, 当数据是有序的且按顺序访问时，使用数组。
+                    </li>
+                  </ol>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </li>
+
+        <li>
           <strong>
             <code>useEffect() HOOK</code>:
           </strong>
@@ -2068,8 +2246,8 @@ function Home() {
         </li>
 
         <li>
-          <Link to="/traffic-light" className="li-title">
-            Traffic Light
+          <Link to="/form-practice" className="li-title">
+            Form Practice (Array's Map)
           </Link>
           <div className="important-paragraph">
             <h3>考点/内容点:</h3>
@@ -2125,7 +2303,7 @@ function App() {
         <Route path="/whack-a-mole" element={<WhackAMole />} />
         <Route path="/memory-game" element={<MemoryGame />} />
         <Route path="/traffic-light" element={<TrafficLight />} />
-        <Route path="/form-practice" element={<FormPractice />} />  
+        <Route path="/form-practice" element={<FormPractice />} />
       </Routes>
     </Router>
   );
