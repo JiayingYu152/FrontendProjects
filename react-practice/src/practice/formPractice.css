@@ -1,5 +1,71 @@
 .form-practice-container {
-    width: 100vw;
-    min-height: 100vh;
-    padding: 10%;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  --commonPx: 30px;
+  --commonBoxShadow: 0 1px 5px rgb(0, 0, 0, 0.4);
+  --hugestMaxWidth: 700px;
+  --smallPx: 10px;
+}
+
+.form-practice-container h1 {
+  text-align: left;
+  width: 100%;
+  max-width: var(--hugestMaxWidth);
+  margin-bottom: var(--commonPx);
+}
+
+.form-practice-page-one-form-container,
+.form-practice-page-two-form-container {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--hugestMaxWidth);
+  width: 700px;
+  height: 1000px;
+  max-height: 80%;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 50px 80px;
+  box-shadow: var(--commonBoxShadow);
+}
+
+.form-practice-container button {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  box-shadow: var(--commonBoxShadow);
+  cursor: pointer;
+}
+
+.form-practice-container button:hover {
+  transition: 0.5s;
+}
+
+.form-practice-container form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--commonPx);
+}
+
+.form-practice-container label {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-practice-container input,
+.form-practice-container select {
+  margin-top: var(--smallPx);
+}
+
+.form-practice-container input,
+.form-practice-container select{
+    padding: 5px 8px;
 }

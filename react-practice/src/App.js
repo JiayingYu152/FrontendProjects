@@ -1169,6 +1169,20 @@ function Home() {
 
       <h2>Real Practices</h2>
       <ol className="home-page-ul-container">
+      <li>
+          <Link to="/form-practice" className="li-title">
+            Form Practice (Array's Map)
+          </Link>
+          <div className="important-paragraph">
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>将hardcode内容放在外侧</li>
+              <li>array的map 遍历方法</li>
+              <li>select中的每一个option都需要有自己的key，如果再加上是map出来的option，则千万一定要记得option的key是index</li>
+            </ul>
+          </div>
+        </li>
+        
         <li>
           <Link to="/contact-form" className="li-title">
             Contact Form Practice
@@ -2245,18 +2259,6 @@ function Home() {
           </div>
         </li>
 
-        <li>
-          <Link to="/form-practice" className="li-title">
-            Form Practice (Array's Map)
-          </Link>
-          <div className="important-paragraph">
-            <h3>考点/内容点:</h3>
-            <ul>
-              <li>将hardcode内容放在外侧</li>
-              <li>array的map 遍历方法</li>
-            </ul>
-          </div>
-        </li>
       </ol>
     </div>
   );
