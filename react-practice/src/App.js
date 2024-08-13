@@ -29,6 +29,7 @@ import WhackAMole from "./practice/WhackAMole";
 import MemoryGame from "./practice/MemoryGame";
 import TrafficLight from "./practice/TrafficLight";
 import FormPractice from "./practice/FormPractice";
+import Abstract from "./practice/wholePage/Abstract";
 
 function Home() {
   const sectionRef = useRef(null);
@@ -49,7 +50,9 @@ function Home() {
         <li>
           <table>
             <thead>
-              <th  colSpan={3}>JavaScript 对象(Object) 与 JavaScript 数组(Array)</th>
+              <th colSpan={3}>
+                JavaScript 对象(Object) 与 JavaScript 数组(Array)
+              </th>
             </thead>
             <tbody>
               <tr>
@@ -204,7 +207,7 @@ function Home() {
             </tbody>
             <tfoot>
               <tr>
-                <td   colSpan={3}>
+                <td colSpan={3}>
                   <strong>什么时候使用对象和数组</strong>:{" "}
                   <ol>
                     <li>
@@ -1167,9 +1170,31 @@ function Home() {
         </li>
       </ol>
 
+      <h2>Whole Page Practices</h2>
+      <ol className="home-page-ul-container">
+        <li>
+          <Link to="/whole-page/abstract" className="li-title">
+            Abstract (Level 1)
+          </Link>
+          <br />
+          <a href="https://www.frontendpractice.com/projects/abstract">
+            Link to source
+          </a>
+          <div className="important-paragraph">
+            <span>Recreate this to learn:</span>{" "}
+            <ul>
+              <li>Minimal layout</li> 
+              <li>Search inputs</li> 
+              <li>Buttons</li>
+              <li>Multi-column footer</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+
       <h2>Real Practices</h2>
       <ol className="home-page-ul-container">
-      <li>
+        <li>
           <Link to="/form-practice" className="li-title">
             Form Practice (Array's Map)
           </Link>
@@ -1178,11 +1203,13 @@ function Home() {
             <ul>
               <li>将hardcode内容放在外侧</li>
               <li>array的map 遍历方法</li>
-              <li>select中的每一个option都需要有自己的key，如果再加上是map出来的option，则千万一定要记得option的key是index</li>
+              <li>
+                select中的每一个option都需要有自己的key，如果再加上是map出来的option，则千万一定要记得option的key是index
+              </li>
             </ul>
           </div>
         </li>
-        
+
         <li>
           <Link to="/contact-form" className="li-title">
             Contact Form Practice
@@ -2258,7 +2285,6 @@ function Home() {
             </ul>
           </div>
         </li>
-
       </ol>
     </div>
   );
@@ -2306,6 +2332,8 @@ function App() {
         <Route path="/memory-game" element={<MemoryGame />} />
         <Route path="/traffic-light" element={<TrafficLight />} />
         <Route path="/form-practice" element={<FormPractice />} />
+
+        <Route path="/whole-page/abstract" element={<Abstract />} />
       </Routes>
     </Router>
   );
