@@ -4,6 +4,7 @@ import "./App.css";
 import ContactForm from "./practice/ContactForm";
 import FoldingDivItem from "./practice/FoldingDivItem";
 import FlightBooker from "./practice/FlightBooker";
+import InAndDeCounter from "./practice/InAndDeCounter";
 import GenerateTable from "./practice/GenerateTable";
 import CssAdjustment from "./practice/CssAdjustment";
 import ProgressBar from "./practice/ProgressBar";
@@ -27,6 +28,8 @@ import UndoableCounter from "./practice/UndoableCounter";
 import WhackAMole from "./practice/WhackAMole";
 import MemoryGame from "./practice/MemoryGame";
 import TrafficLight from "./practice/TrafficLight";
+import FormPractice from "./practice/FormPractice";
+import Abstract from "./practice/wholePage/Abstract";
 
 function Home() {
   const sectionRef = useRef(null);
@@ -45,6 +48,186 @@ function Home() {
       <h2>Review Knowledge</h2>
       <ol>
         <li>
+          <table>
+            <thead>
+              <th colSpan={3}>
+                JavaScript 对象(Object) 与 JavaScript 数组(Array)
+              </th>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>
+                  <strong>
+                    JavaScript 对象(Object) 与其 <mark>属性</mark>
+                  </strong>
+                </td>
+                <td>
+                  <strong>
+                    JavaScript 数组(Array) 与其 <mark>元素</mark>
+                  </strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td>介绍</td>
+                <td>
+                  对象是键值对的集合(key-value
+                  pairs)，适合用于存储相关的数据和功能。
+                </td>
+                <td>数组是一个有序的数据集合，可以通过索引访问。</td>
+              </tr>
+
+              <tr>
+                <td>初始化__方法</td>
+                <td>
+                  <mark>属性</mark>
+                  <ol>
+                    <li>
+                      对象字面量:{" "}
+                      <code>
+                        const person = |花括号| firstName: "john", age: 30,
+                        isStudent: false |花括号|
+                      </code>
+                    </li>
+                    <li>
+                      new Object() 语法:{" "}
+                      <code>
+                        const car = new Object(); car.make = "Toyota"; car.year
+                        = 2020;
+                      </code>
+                    </li>
+                  </ol>
+                </td>
+
+                <td>
+                  <mark>元素</mark>{" "}
+                  <ol>
+                    <li>
+                      数组字面量:{" "}
+                      <code>const fruits = ['apple', 'banana', 'cherry'];</code>
+                    </li>
+                    <li>
+                      new Array() 语法: const numbers = new Array(1, 2, 3, 4,
+                      5);
+                    </li>
+                  </ol>
+                </td>
+              </tr>
+
+              <tr>
+                <td>访问__方法</td>
+                <td>
+                  <mark>属性</mark>
+                  可以使用点操作符（.）或者方括号（[]）来访问对象的属性。{" "}
+                  <ol>
+                    <li>
+                      使用点操作符:{" "}
+                      <code>console.log(person.name); // 输出: John</code>
+                    </li>
+                    <li>
+                      使用方括号:{" "}
+                      <code>console.log(person['age']); // 输出: 30</code>{" "}
+                    </li>
+                  </ol>
+                </td>
+                <td>
+                  <mark>元素</mark>通过索引来访问数组的元素，索引从 0 开始。{" "}
+                  <code>
+                    console.log(fruits[0]); // 输出: apple.
+                    console.log(numbers[2]); // 输出: 3
+                  </code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>修改__方法</td>
+                <td>
+                  <mark>属性</mark>
+                  同样地，你可以使用点操作符或方括号来修改对象的属性。
+                  <ol>
+                    <li>
+                      修改属性值:{" "}
+                      <code>person.age = 31; person['isStudent'] = true;</code>
+                    </li>
+                    <li>
+                      添加新的属性:{" "}
+                      <code>
+                        person.gender = 'male'; person['height'] = 180;
+                      </code>
+                    </li>
+                  </ol>
+                </td>
+                <td>
+                  <mark>元素</mark>直接使用索引来修改数组的元素。:{" "}
+                  <code>
+                    fruits[1] = 'blueberry'; // 修改第二个元素.
+                    console.log(fruits); // 输出: ['apple', 'blueberry',
+                    'cherry']
+                  </code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>操作__方法</td>
+                <td>
+                  <mark>属性</mark>删除对象的属性: 使用 delete 操作符:{" "}
+                  <code>
+                    delete person.age; console.log(person); // |花括号| name:
+                    'John', isStudent: true, gender: 'male', height: 180
+                    |花括号|
+                  </code>
+                </td>
+
+                <td>
+                  <mark>元素</mark>{" "}
+                  <ol>
+                    <li>
+                      使用 push() 在数组的末尾<strong>添加元素</strong>。{" "}
+                      <code>
+                        fruits.push('date');console.log(fruits); // 输出:
+                        ['apple', 'blueberry', 'cherry', 'date']
+                      </code>
+                    </li>
+
+                    <li>
+                      使用 pop() 从数组的末尾<strong>删除元素</strong>。{" "}
+                      <code>
+                        fruits.pop(); console.log(fruits); // 输出: ['apple',
+                        'blueberry', 'cherry']
+                      </code>
+                    </li>
+
+                    <li>
+                      使用 for 循环或 forEach() 方法<strong>遍历数组</strong>。
+                    </li>
+                  </ol>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colSpan={3}>
+                  <strong>什么时候使用对象和数组</strong>:{" "}
+                  <ol>
+                    <li>
+                      <mark>Object 对象</mark>:
+                      当你有相关属性和值的集合，且需要通过键名来访问时，使用对象。In
+                      short, 当数据是无序的且具有唯一标识时，使用对象。
+                    </li>
+                    <li>
+                      <mark>Array数组</mark>:
+                      当你有一个有序的列表，且需要通过索引来访问时，使用数组。In
+                      short, 当数据是有序的且按顺序访问时，使用数组。
+                    </li>
+                  </ol>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </li>
+
+        <li>
           <strong>
             <code>useEffect() HOOK</code>:
           </strong>
@@ -52,12 +235,51 @@ function Home() {
             <li>用于在函数组件中处理副作用。</li>
             <li>
               <strong>基本用法：</strong>{" "}
-              <code>useEffect(() => {"副作用代码"}, [依赖项]);</code>{" "}
+              <code>useEffect(() 指向{"副作用代码"}, [依赖项]);</code>{" "}
               //副作用代码: 在依赖项变化时或组件首次渲染后执行的代码。
             </li>
             <li>
-              什么时候需要return？ => useEffect
+              什么时候需要return？ useEffect
               中的返回函数用于清理副作用。如果副作用需要清理（例如订阅、计时器），需要返回一个清理函数。如果副作用不需要清理（例如简单的数据获取），可以省略返回函数。
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>
+            <code>useRef() HOOK:</code>
+          </strong>{" "}
+          <ul>
+            <li>可以用来存储任何在渲染周期中不需要重新渲染的可变值。</li>
+            <li>
+              useRef 的特点和用途:{" "}
+              <ul>
+                <li>
+                  持久化存储：在组件的生命周期中，useRef
+                  的返回对象会保持不变。这意味着你可以用它来存储跨渲染周期不会改变的变量。
+                </li>
+                <li>
+                  不触发重新渲染：useRef 的 current
+                  属性的改变不会触发组件的重新渲染。与 useState 不同，改变
+                  useRef 的值不会导致组件重新渲染。
+                </li>
+                <li>
+                  访问 DOM 元素：useRef 最常见的用途之一是访问 DOM 元素，类似于
+                  class 组件中的 React.createRef()。
+                </li>
+                <li>
+                  存储任何可变值：useRef
+                  可以用来存储任何类型的数据，包括对象、数组、数字、字符串等。这使得它非常灵活。
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>
+                <code>current</code>属性：
+              </strong>{" "}
+              current
+              是唯一且核心的属性：用于存储需要在渲染之间共享的可变数据。其应用场景广泛：适用于
+              DOM 元素引用、状态缓存、保存前次状态等场景。
             </li>
           </ul>
         </li>
@@ -673,10 +895,321 @@ function Home() {
             </li>
           </ul>
         </li>
+
+        <li>
+          <strong>
+            <code>toLocaleString()</code>
+          </strong>{" "}
+          <ul>
+            <li>
+              是 JavaScript 中的一个内置方法，用于将 Number、Date、BigInt
+              等对象转换为一个本地化的字符串表示形式。它根据用户的语言环境和指定的选项格式化输出，使得数值和日期能够符合不同地区的显示习惯。
+            </li>
+            <li>
+              参数1—locales：一个或多个表示语言环境的字符串（可选）。如
+              'en-US'、'de-DE'、'fr-FR' 等。
+            </li>
+            <li>
+              参数2—options：一个对象，包含以下属性，用于定义格式化选项（可选）。
+            </li>
+            <li>
+              常用选项:{" "}
+              <ul>
+                <li>
+                  style：用于指定格式类型，适用于 Number 对象。可以是：
+                  <ul>
+                    <li>'decimal'：数字格式（默认）</li>{" "}
+                    <li>'currency'：货币格式</li> <li>'percent'：百分比格式</li>{" "}
+                    <li>'unit'：单位格式</li>
+                  </ul>
+                </li>
+                <li>
+                  currency：指定货币的 ISO 代码（如 'USD'、'EUR'、'JPY'）。
+                </li>
+                <li>
+                  currencyDisplay：定义货币符号如何显示。{" "}
+                  <ul>
+                    <li>'symbol'：显示货币符号（如 $）</li>
+                    <li>'code'：显示货币代码（如 USD）</li>
+                    <li>'name'：显示货币名称（如 dollar）</li>
+                  </ul>
+                </li>
+
+                <li>
+                  minimumFractionDigits 和
+                  maximumFractionDigits：指定小数位数的最小和最大值。
+                </li>
+                <li>minimumIntegerDigits：整数部分的最小位数。</li>
+                <li>useGrouping：是否使用分组分隔符（如千位分隔符）。</li>
+                <li>hour12：用于 Date 对象，指定是否使用 12 小时制。</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>table元素</strong>{" "}
+          <ul>
+            <li>
+              属性：{" "}
+              <ul>
+                <li>
+                  border：指定表格边框的宽度。例如， |table border="1"|
+                  将创建一个带有边框的表格。
+                </li>
+                <li>cellpadding：设置单元格内容与边框之间的距离。</li>
+                <li>cellspacing：设置单元格之间的距离。</li>
+                <li>
+                  width 和 height：定义表格的宽度和高度（通常通过 CSS 控制）
+                </li>
+              </ul>
+            </li>
+            <li>
+              table元素下， <code>thead</code>表头， <code>tbody</code>
+              表格主体， <code>tfoot</code>表尾。
+              逻辑分离以便于管理和样式控制。在每个component下都由{" "}
+              <code>tr</code>元素包围。详情看下。
+            </li>
+            <li>
+              <strong>
+                <code>tbody</code>元素
+              </strong>
+              ：用于定义表格的主体部分，包含数据行。在简单表格中，|tbody|
+              可以省略，但建议使用以提高可读性。
+            </li>
+            <li>
+              <strong>
+                <code>tr</code>元素
+              </strong>
+              ：定义一个表格行（Table
+              Row），包含一组相关的单元格。tr是行内容器，作为 th(表头单元) 和
+              td(表格数据单元) 的容器。可以多次使用 tr 来定义多个行。 e.g.
+              在tbody中可以有很多个tr，每个tr中又包裹着多个 td元素
+            </li>
+            <li>
+              <strong>
+                <code>td</code>元素
+              </strong>
+              ：定义一个表格的单元格，用于显示数据。可以包含文本、链接、图像等各种内容。可以选择
+              colspan 和 rowspan【可选属性】，用于跨列或跨行合并单元格。{" "}
+              <ul>
+                <li>colspan：指定单元格跨越的列数。</li>
+                <li>rowspan：指定单元格跨越的行数。</li>
+              </ul>
+            </li>
+            <li>
+              <strong>
+                <code>th</code>元素
+              </strong>
+              ： 代表表头单元格（Table Header）它与 "td"
+              类似，但用于定义表格的标题行或列，可以提升数据的可读性和语义化。"th"
+              通常用在表格的 "thead" 部分，但也可以在 "tbody" 和 "tfoot"
+              中使用以提供不同部分的标题信息。"th"
+              默认以粗体显示其内容，并水平居中。
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>
+            <code>label</code>元素
+          </strong>{" "}
+          <ul>
+            <li>
+              用于定义表单控件的标注文本，并将其与表单控件关联，以便用户在点击标签时能自动聚焦到相应的输入控件。
+            </li>
+            <li>
+              label标签中没有value属性，通过 for 属性（或在 React 中使用
+              htmlFor）与表单控件关联。
+            </li>
+            <li>
+              下面是 "for属性" 和 "htmlFor属性" 的区别和用法：
+              <table className="label-element-table">
+                <thead>
+                  <tr>
+                    <th>特性</th>
+                    <th>
+                      HTML 中的 <code>for</code>
+                    </th>
+                    <th>
+                      React 中的 <code>htmlFor</code>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>作用</td>
+                    <td colSpan={2}>绑定 "label" 和表单控件</td>
+                  </tr>
+                  <tr>
+                    <td>属性名称</td>
+                    <td>
+                      <code>for</code>
+                    </td>
+                    <td>
+                      <code>htmlFor</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>原因</td>
+                    <td>标准 HTML 属性</td>
+                    <td>避免与 JavaScript 保留字冲突</td>
+                  </tr>
+                  <tr>
+                    <td>使用场景</td>
+                    <td>普通 HTML 文档</td>
+                    <td>React 应用</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              其他全局属性：{" "}
+              <ul>
+                <li>id：定义元素的唯一标识符。</li>
+                <li>class：用于指定一个或多个类名，通常用于 CSS 样式。</li>
+                <li>style：直接定义内联样式。</li>
+                <li>
+                  title：为元素提供额外的信息，当用户将鼠标悬停在元素上时会显示为提示。
+                </li>
+                <li>hidden：如果存在该属性，表示元素不会被显示。</li>
+                <li>
+                  dir：设置文本方向，值可以是 ltr（从左到右）、rtl（从右到左）或
+                  auto。
+                </li>
+                <li>lang：指定元素中内容的语言。</li>
+              </ul>
+            </li>
+
+            <li>
+              label还支持 事件属性 ：{" "}
+              <ul>
+                <li>
+                  鼠标事件：
+                  <ul>
+                    <li>onclick：用户点击元素时触发。</li>
+                    <li>onmouseover：鼠标指针移动到元素上时触发。</li>
+                    <li>onmouseout：鼠标指针移出元素时触发。</li>
+                  </ul>
+                </li>
+                <li>
+                  键盘事件：{" "}
+                  <ul>
+                    <li>onkeydown：用户按下键盘按键时触发。</li>
+                    <li>onkeyup：用户释放键盘按键时触发。</li>
+                  </ul>
+                </li>
+
+                <li>
+                  焦点事件：{" "}
+                  <ul>
+                    <li>onfocus：元素获得焦点时触发。</li>
+                    <li>onblur：元素失去焦点时触发。</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              自定义数据属性允许开发者将自定义数据嵌入到 HTML 中。这些属性以
+              data- 开头，并可以通过 JavaScript 轻松访问。{" "}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>展开语法（Spread Syntax）</strong>:{" "}
+          <ul>
+            <li>
+              展开语法是由三个点 ...
+              组成的语法，可以将一个可迭代对象（如数组、字符串、或对象）展开为单独的元素。其典型用法包括数组合并、对象合并、函数参数的展开等。
+            </li>
+            <li>
+              应用场景:{" "}
+              <ul>
+                <li>
+                  添加元素到数组末尾:
+                  如果你需要将一个元素添加到数组的末尾而不改变原数组:{" "}
+                  <code>
+                    const fruits = ['apple', 'banana']; const newFruit =
+                    'orange'; const newFruitsList = [...fruits, newFruit];
+                    console.log(newFruitsList); // 输出: ['apple', 'banana',
+                    'orange']
+                  </code>
+                </li>
+                <li>
+                  合并两个或多个数组：{" "}
+                  <code>
+                    const array1 = [1, 2, 3]; const array2 = [4, 5, 6]; const
+                    mergedArray = [...array1, ...array2];
+                    console.log(mergedArray); // 输出: [1, 2, 3, 4, 5, 6]
+                  </code>
+                </li>
+                <li>
+                  使用展开语法可以创建一个数组的浅拷贝.
+                  这种方式适用于需要创建原始数组的一个副本而不改变原始数组的情况。:{" "}
+                  <code>
+                    const originalArray = [1, 2, 3]; const copyArray =
+                    [...originalArray]; console.log(copyArray); // 输出: [1, 2,
+                    3]
+                  </code>
+                </li>
+
+                <li>
+                  函数参数展开: 将数组中的元素作为独立的参数传递给函数.
+                  下面这个方法是currying：{" "}
+                  <code>
+                    function sum(a, b, c) |"return" a + b + c; | const numbers =
+                    [1, 2, 3]; const result = sum(...numbers);
+                    console.log(result); // 输出: 6
+                  </code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Whole Page Practices</h2>
+      <ol className="home-page-ul-container">
+        <li>
+          <Link to="/whole-page/abstract" className="li-title">
+            Abstract (Level 1)
+          </Link>
+          <br />
+          <a href="https://www.frontendpractice.com/projects/abstract">
+            Link to source
+          </a>
+          <div className="important-paragraph">
+            <span>Recreate this to learn:</span>{" "}
+            <ul>
+              <li>Minimal layout</li> 
+              <li>Search inputs</li> 
+              <li>Buttons</li>
+              <li>Multi-column footer</li>
+            </ul>
+          </div>
+        </li>
       </ol>
 
       <h2>Real Practices</h2>
       <ol className="home-page-ul-container">
+        <li>
+          <Link to="/form-practice" className="li-title">
+            Form Practice (Array's Map)
+          </Link>
+          <div className="important-paragraph">
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>将hardcode内容放在外侧</li>
+              <li>array的map 遍历方法</li>
+              <li>
+                select中的每一个option都需要有自己的key，如果再加上是map出来的option，则千万一定要记得option的key是index
+              </li>
+            </ul>
+          </div>
+        </li>
+
         <li>
           <Link to="/contact-form" className="li-title">
             Contact Form Practice
@@ -753,6 +1286,19 @@ function Home() {
                 容易忘记在submit function里先 阻止事件的默认行为
                 (对于表单提交事件，浏览器的默认行为是发送表单数据到服务器并重新加载页面。)
               </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <Link to="/increment-and-decrement-counter" className="li-title">
+            Increment and Decrement Counter
+          </Link>
+          <div className="important-paragraph">
+            <h3>考点/内容点:</h3>
+            <ul>
+              <li>对于useState HOOK 的使用</li>
+              <li>对className的切换</li>
             </ul>
           </div>
         </li>
@@ -1752,6 +2298,10 @@ function App() {
         <Route path="/contact-form" element={<ContactForm />} />
         <Route path="accordion" element={<FoldingDivItem />} />
         <Route path="/flight-booker" element={<FlightBooker />} />
+        <Route
+          path="/increment-and-decrement-counter"
+          element={<InAndDeCounter />}
+        />
         <Route path="/generate-table" element={<GenerateTable />} />
         <Route path="/css-adjustment" element={<CssAdjustment />} />
         <Route path="/progress-bar" element={<ProgressBar />} />
@@ -1781,6 +2331,9 @@ function App() {
         <Route path="/whack-a-mole" element={<WhackAMole />} />
         <Route path="/memory-game" element={<MemoryGame />} />
         <Route path="/traffic-light" element={<TrafficLight />} />
+        <Route path="/form-practice" element={<FormPractice />} />
+
+        <Route path="/whole-page/abstract" element={<Abstract />} />
       </Routes>
     </Router>
   );

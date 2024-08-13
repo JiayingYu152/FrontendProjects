@@ -36,13 +36,13 @@ const GridLight = () => {
   const navigate = useNavigate(); //for navigate back to home page, not main logic relevant
 
   const deactivateCells = () => { //每300毫秒停用一个单元格，直到所有单元格都被停用。
-    setIsDeactivating(true);
-    const timer = setInterval(() => {
-      setOrder((originalOrder) => {
-        const newOrder = originalOrder.slice();
+    setIsDeactivating(true); //表示开始停用单元格的过程。意义：在用户界面上可能用于显示停用过程正在进行，比如显示一个加载指示器。
+    const timer = setInterval(() => { //在这里创建了一个计时器，每300毫秒执行一次。
+      setOrder((originalOrder) => { //使用 setOrder 更新当前的单元格状态。originalOrder 是当前单元格顺序的副本。
+        const newOrder = originalOrder.slice(); //创建 originalOrder 的浅拷贝 newOrder。意义：slice() 方法用于复制数组，使得后续操作不会直接修改原数组 originalOrder。
         newOrder.pop();
 
-        if (newOrder.length === 0) {
+        if (newOrder.length === 0) { //如果 newOrder 为空，则说明所有单元格都已停用，停止定时器并更新状态。
           clearInterval(timer);
           setIsDeactivating(false);
         }
@@ -60,7 +60,6 @@ const GridLight = () => {
       >
         Going back to home page
       </button>
-
       <div
         className="grid-light-page-grid"
         style={{
@@ -75,7 +74,7 @@ const GridLight = () => {
               filled={order.includes(index)}
               isDisabled={order.includes(index) || isDeactivating}
               onClick={() => {
-                const newOrder = [...order, index];
+                const newOrder = [...order, index]; //先将order展开，然后将新的index添加到数组中。就形成了新的order数组。
                 setOrder(newOrder);
 
                 if (newOrder.length === config.flat(1).filter(Boolean).length) {

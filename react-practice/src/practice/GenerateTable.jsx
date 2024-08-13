@@ -37,7 +37,7 @@ const GenerateTable = () => {
       for (let i = 0; i < rows; i++) {
         newTableData[i][left] = counter++;
       }
-      left++;
+      left++ 
       if (left < columns) {
         for (let i = rows - 1; i >= 0; i--) {
           newTableData[i][left] = counter++;

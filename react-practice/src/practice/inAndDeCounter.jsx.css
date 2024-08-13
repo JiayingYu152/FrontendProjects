@@ -1,0 +1,25 @@
+.in-and-de-counter-container {
+  margin: 10%;
+  display: flex;
+  gap: 20px;
+}
+
+.in-and-de-counter-container button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #ccc;
+}
+
+.button-light {
+  background-color: white;
+  color: #000;
+  font-size: 1.5rem;
+  transition: 0.5s ease;
+}
+
+.button-dark {
+  background-color: #ccc;
+  color: #000;
+}
